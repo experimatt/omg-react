@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.omg-icon {
+    width: 121px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.navbar {
+  background-color: #162d3d;
+  height: 50px;
+}
+
+.stop-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.arrival-description {
+  font-size: 11px;
+}
+
+.arrival-description {
+  font-size: 10px;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
