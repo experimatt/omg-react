@@ -22,12 +22,12 @@ class App extends Component {
     .then(data =>
       this.setState({ arrivals: data })
     ).catch(function(error) {
-      // console.log(error);
+      console.log(error);
     });
   }
 
   render() {
-    // console.log('this.state.arrivals', this.state.arrivals);
+    console.log('this.state.arrivals', this.state.arrivals);
     
     const arrivals = this.state.arrivals.map((arrival) =>
       <div key={arrival.BlockNumber}>
@@ -39,7 +39,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className='navbar'>
+        <header id='navbar'>
           <img src={logo} alt='logo' className='omg-icon' />
         </header>
       
@@ -48,14 +48,28 @@ class App extends Component {
           <div className='stop-description'>Stop # 56006, Near Side E</div>
         </div><br />
 
-        <div className='App-intro' id='arrival-times'>
+        <div id='arrival-times'>
           { arrivals }
         </div>
+        <footer id='footer'>
+          <div class="icon-bar">
+            <a className="active" href="/list">
+              <i className="fa fa-align-justify" ></i>
+              <span className="text">List</span>
+            </a>
+            <a href="/map">
+              <i className="icon-omg-map"></i>
+              <span className="text">Map</span>
+            </a>
+            <a href="/favorites">
+              <i class="fa fa-star"></i>
+              <span className="text">Favorites</span>
+            </a>
+          </div>
+        </footer>
       </div>
     );
   }
 }
-
-
 
 export default App;
