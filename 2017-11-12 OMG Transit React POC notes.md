@@ -11,6 +11,18 @@
   4) Show real-time arrivals for that stop
     * Refresh real-time arrivals every 30 seconds
 
+# TODOs
+  * Get react up and running
+  * Get redux up and running
+  * Style front-end list/map/favorites pages
+  * Add google map
+  * Figure out how to do reverse geo-lookup
+  * Store stop data as json
+  * Use json as back-end
+    - this might work: https://github.com/typicode/json-server
+  * Use cookies for storing user favorites
+
+
 # Back-end needed for
   1) GTFS stop data
   2) User profiles

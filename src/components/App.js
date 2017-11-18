@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './images/omg-header-words.svg';
-import './App.css';
+import logo from '../images/omg-header-words.svg';
+import '../styles/App.css';
 
 class App extends Component {
   constructor() {
@@ -22,12 +22,12 @@ class App extends Component {
     .then(data =>
       this.setState({ arrivals: data })
     ).catch(function(error) {
-      console.log(error);
+      // console.log(error);
     });
   }
 
   render() {
-    console.log('this.state.arrivals', this.state.arrivals);
+    // console.log('this.state.arrivals', this.state.arrivals);
     
     const arrivals = this.state.arrivals.map((arrival) =>
       <div key={arrival.BlockNumber}>

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "OMG React",
+  "name": "OMG Transit React POC",
   "icons": [
     {
       "src": "favicon.ico",
