@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ArrivalBar from './ArrivalBar'
+// import ArrivalChip from './ArrivalChip'
 import { staticArrivals } from '../utils/Offline'
 import '../styles/main.css';
 
@@ -13,12 +13,6 @@ class Stop extends Component {
 
   componentDidMount() {
     this.fetchArrivalData(this.props.stopId);
-    // this.fetchStaticData();
-  }
-
-  // for offline use
-  fetchStaticData() {
-    this.setState({ arrivals: staticArrivals })
   }
 
   fetchArrivalData(stopId) {
@@ -33,14 +27,14 @@ class Stop extends Component {
   }
 
   render() {
-    console.log('this.state.arrivals', this.state.arrivals);
 
     return (
-      <div className="stop">
-        <div className='stop-name'>Raymond Ave Station & Platform</div><br />
-        <div className='arrivals'>
+      <div className="stop-preview">
+        <div className='stop-name'>{ this.props.stop_name }</div><br />
+        <div className='arrival-chips'>
+          Arrival chips go here
           { this.state.arrivals.map((arrival) =>
-            <ArrivalBar key={arrival.BlockNumber} {...arrival} />
+            "This is where arrival chips go"
           )}
         </div>
       </div>
@@ -49,3 +43,5 @@ class Stop extends Component {
 }
 
 export default Stop;
+
+// <ArrivalChip key={arrival.BlockNumber} {...arrival} />

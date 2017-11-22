@@ -9,7 +9,7 @@ let directionMappings = {
   'WESTBOUND': 'left',
 }
 
-const Arrival = (props) => {
+const ArrivalBar = (props) => {
   let arrowClass = `icon-omg-arrow-${directionMappings[props.RouteDirection]}`
   console.log(moment(props.DepartureTime).toString());
 
@@ -22,10 +22,10 @@ const Arrival = (props) => {
       <div className='arrival-time'>
         { props.DepartureText }
         &nbsp;
-        {!props.Actual && <i title="Real-time data unavailable" className="fa fa-question-circle"></i> }<br />
+        {!props.Actual && <i title="Real-time data unavailable" className="fa fa-question-circle"></i> }
       </div>
-    </div> 
+    </div>
   )
 }
 
-export default Arrival
+export default ArrivalBar

@@ -76,21 +76,21 @@ footer {
 }
 
 .arrival-bar {
-  margin: 0;
+  display: inline-block;
   width: 100%;
   height: 67px;
   line-height: 20px;
-  display: inline-block;
+  font-size: 22px;
+  border-bottom: 1px solid $grey;
 }
 
 .arrival-info {
+  display: inline-block;
   float: left;
   width: 25%;
   padding: 8px 4px 4px;
-  height: 60px;
   vertical-align: middle;
   text-align: left;
-  font-size: 22px;
   
   .arrival-description {
     font-size: 12px;
@@ -98,10 +98,9 @@ footer {
 }
 
 .arrival-time {
+  display: flex;
   float: right;
-  font-size: 22px;
   font-style: italic;
   padding-right: 4px;
-  height: 60px;
   vertical-align: middle;
 }
