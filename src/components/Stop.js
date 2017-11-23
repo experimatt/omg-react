@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ArrivalBar from './ArrivalBar'
 import { staticArrivals } from '../utils/Offline'
 import '../styles/main.css';
 
-class Stop extends Component {
+class Stop extends React.Component {
   constructor() {
     super();
     this.state = {

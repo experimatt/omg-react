@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import ArrivalChip from './ArrivalChip'
-import { staticArrivals } from '../utils/Offline'
+// import { staticArrivals } from '../utils/Offline'
 import '../styles/main.css';
 
-class Stop extends Component {
+class StopPreview extends React.Component {  
   constructor() {
     super();
     this.state = {
@@ -42,6 +42,6 @@ class Stop extends Component {
   }
 }
 
-export default Stop;
+export default StopPreview;
 
 // <ArrivalChip key={arrival.BlockNumber} {...arrival} />

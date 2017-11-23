@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import StopPreview from './StopPreview'
 import '../styles/main.css';
 
-class List extends Component {
+class List extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -14,6 +14,7 @@ class List extends Component {
     this.getNearbyStops(this.props.coords);
   }
 
+  // return static list for now
   getNearbyStops(coords) {
     let nearbyStops = [
       {

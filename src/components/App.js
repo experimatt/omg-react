@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import headerLogo from '../images/omg-header-words.svg';
 import List from './List'
 // import Stop from './Stop'
 import '../styles/main.css';
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {
