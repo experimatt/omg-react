@@ -12,7 +12,8 @@ class Stop extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchArrivalData(this.props.stopId);
+    let stopId = this.props.match.params.id
+    this.fetchArrivalData(stopId);
     // this.fetchStaticData();
   }
 
@@ -33,10 +34,8 @@ class Stop extends React.Component {
   }
 
   render() {
-    console.log('this.state.arrivals', this.state.arrivals);
-
     return (
-      <div className="stop">
+      <div className="stop main-container">
         <div className='stop-name'>Raymond Ave Station & Platform</div><br />
         <div className='arrivals'>
           { this.state.arrivals.map((arrival) =>

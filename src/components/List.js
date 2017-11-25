@@ -6,12 +6,19 @@ class List extends React.Component {
   constructor() {
     super();
     this.state = {
+      coords: [],
       nearbyStops: []
     };
   }
+
+  // return static lat/lon for now
+  getUserLocation() {
+    this.setState({ coords: [44.963244, -93.195938] })
+  }
   
   componentDidMount() {
-    this.getNearbyStops(this.props.coords);
+    let coords = this.getUserLocation()
+    this.getNearbyStops(coords);
   }
 
   // return static list for now
@@ -60,7 +67,7 @@ class List extends React.Component {
 
   render() {
     return (
-      <div className='stop-list'>
+      <div className='list main-container'>
         { this.state.nearbyStops.map((stop) =>
           <StopPreview key={stop.stop_id} {...stop} />
         )}

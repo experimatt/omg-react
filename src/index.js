@@ -12,16 +12,16 @@ import Stop from './components/Stop';
 
 ReactDOM.render(
   <Provider store={store}>
-    { /* Tell the Router to use our enhanced history */ }
-    <ConnectedRouter history={history}>
-      <Route path="/" component={App}>
-        <Route path="list" component={List}/>
-        <Route path="stop" component={Stop}/>
-      </Route>
-    </ConnectedRouter>
+      <ConnectedRouter history={history}>
+        <App>
+          <Route exact path="/" component={List}/>
+          <Route path="/list" component={List}/>
+          <Route path="/stops/:id" component={Stop}/>
+        </App>
+      </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 )
 
-
-// <Route path="map" component={Map}/>
+// <Route exact path="/map" component={Map} />
+// <Route exact path="/favorites" component={Favorites} />

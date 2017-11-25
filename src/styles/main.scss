@@ -11,10 +11,6 @@ body {
   line-height: 20px;
 }
 
-.App {
-  text-align: center;
-}
-
 header {
   background-color: #162d3d;
   height: 50px;
@@ -44,13 +40,17 @@ footer {
   }
 }
 
+.App {
+  text-align: center;
+}
+
 .omg-header-words {
     width: 121px;
     height: 30px;
     margin-top: 10px;
 }
 
-.stop {
+.main-container {
   width: 80%;
   margin: 0 auto;
   text-align: center;
