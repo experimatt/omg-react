@@ -77,7 +77,8 @@ body {
   font-family: "Open Sans", Helvetica, sans-serif;
   color: #686868;
   font-size: 14px;
-  line-height: 20px; }
+  line-height: 20px;
+  text-align: center; }
 
 header {
   background-color: #162d3d;
@@ -102,10 +103,7 @@ footer {
       font-size: 14px;
       display: block; }
 
-.App {
-  text-align: center; }
-
-.omg-header-words {
+.header-logo {
   width: 121px;
   height: 30px;
   margin-top: 10px; }
@@ -113,11 +111,15 @@ footer {
 .main-container {
   width: 80%;
   margin: 0 auto;
-  text-align: center;
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300; }
 
-.stop-name {
+.map {
+  width: 100%;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-weight: 300; }
+
+.stop-heading {
   background-color: #efefef;
   color: #686868;
   font-size: 22px;
@@ -128,9 +130,22 @@ footer {
   text-overflow: ellipsis;
   text-transform: uppercase; }
 
+.stop-preview {
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  height: 60px;
+  border-bottom: 1px solid #efefef;
+  padding-top: 10px; }
+  .stop-preview a {
+    text-decoration: none;
+    color: #686868; }
+
+.stop-title {
+  text-transform: uppercase; }
+
 .arrivals {
-  width: 100%;
-  text-align: center; }
+  width: 100%; }
 
 .arrival-bar {
   display: inline-block;

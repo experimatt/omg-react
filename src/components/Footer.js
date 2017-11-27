@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const Footer = (props) => (
+const Footer = () => (
   <footer id='footer'>
     <div className="icon-bar">
       <Link to="/list" className="active" >

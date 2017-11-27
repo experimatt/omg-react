@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ArrivalBar from './ArrivalBar'
 import { staticArrivals } from '../utils/Offline'
-import '../styles/main.css';
 
-class Stop extends React.Component {
+class Stop extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,17 +12,18 @@ class Stop extends React.Component {
   }
 
   componentDidMount() {
-    let stopId = this.props.match.params.id
-    this.fetchArrivalData(stopId);
-    // this.fetchStaticData();
+    console.log(this.props);
+    // let stopId = this.props.match.params.id
+    // this.loadStopArrivals(stopId);
+    this.loadStaticStopArrivals();
   }
 
   // for offline use
-  fetchStaticData() {
+  loadStaticStopArrivals() {
     this.setState({ arrivals: staticArrivals })
   }
 
-  fetchArrivalData(stopId) {
+  loadStopArrivals(stopId) {
     const url = `http://svc.metrotransit.org/NexTrip/${stopId}?format=json`
     fetch(url)
     .then(response=>response.json())
@@ -36,7 +37,7 @@ class Stop extends React.Component {
   render() {
     return (
       <div className="stop main-container">
-        <div className='stop-name'>Raymond Ave Station & Platform</div><br />
+        <div className='stop-heading'>Stop name goes here</div>
         <div className='arrivals'>
           { this.state.arrivals.map((arrival) =>
             <ArrivalBar key={arrival.BlockNumber} {...arrival} />
@@ -47,4 +48,10 @@ class Stop extends React.Component {
   }
 }
 
-export default Stop;
+const mapStateToProps = (state) => {
+  return {
+    arrivals: state.arrivals
+  };
+};
+
+export default connect(mapStateToProps, {})(Stop);

@@ -4,7 +4,7 @@ import Footer from './Footer'
 import '../styles/main.css';
 
 const App = (props) => (
-  <div className="App">
+  <div>
     <Header />
     { props.children }
     <Footer />

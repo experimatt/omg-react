@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import StopPreview from './StopPreview'
-import '../styles/main.css';
 
-class List extends React.Component {
+class List extends Component {
   constructor() {
     super();
     this.state = {

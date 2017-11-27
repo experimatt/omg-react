@@ -9,6 +9,7 @@ body {
   color: $dark_grey;
   font-size: 14px;
   line-height: 20px;
+  text-align: center;
 }
 
 header {
@@ -40,11 +41,7 @@ footer {
   }
 }
 
-.App {
-  text-align: center;
-}
-
-.omg-header-words {
+.header-logo {
     width: 121px;
     height: 30px;
     margin-top: 10px;
@@ -53,12 +50,17 @@ footer {
 .main-container {
   width: 80%;
   margin: 0 auto;
-  text-align: center;
   font-family: $font_regular;
   font-weight: 300;
 }
 
-.stop-name {
+.map {
+  width: 100%;
+  font-family: $font_regular;
+  font-weight: 300;
+}
+
+.stop-heading {
   background-color: $grey;
   color: $dark_grey;
   font-size: 22px;
@@ -70,9 +72,26 @@ footer {
   text-transform: uppercase;
 }
 
+.stop-preview {
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  height: 60px;
+  border-bottom: 1px solid $grey;
+  padding-top: 10px;
+
+  a {
+    text-decoration: none;
+    color: $dark_grey;
+  }
+}
+
+.stop-title {
+  text-transform: uppercase;
+}
+
 .arrivals {
   width: 100%;
-  text-align: center;
 }
 
 .arrival-bar {
