@@ -147,6 +147,17 @@ footer {
 .arrivals {
   width: 100%; }
 
+.arrival-chip {
+  color: #fff; }
+  .arrival-chip .p5 {
+    background-color: #b94a48; }
+  .arrival-chip .p10 {
+    background-color: #f89406; }
+  .arrival-chip .p20 {
+    background-color: #c0c0c0; }
+  .arrival-chip .pnd {
+    background-color: black; }
+
 .arrival-bar {
   display: inline-block;
   width: 100%;
@@ -154,6 +165,15 @@ footer {
   line-height: 20px;
   font-size: 22px;
   border-bottom: 1px solid #efefef; }
+  .arrival-bar .p5 {
+    background-color: #b94a48;
+    color: #fff; }
+  .arrival-bar .p10 {
+    background-color: #f89406;
+    color: #fff; }
+  .arrival-bar .p20 {
+    background-color: #fff;
+    color: #686868; }
 
 .arrival-info {
   display: inline-block;
@@ -162,11 +182,12 @@ footer {
   padding: 8px 4px 4px;
   vertical-align: middle;
   text-align: left; }
-  .arrival-info .arrival-description {
-    font-size: 12px; }
+
+.description-text {
+  font-size: 12px; }
 
 .arrival-time {
-  display: flex;
+  display: inline-block;
   float: right;
   font-style: italic;
   padding-right: 4px;

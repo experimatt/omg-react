@@ -5,11 +5,11 @@ import { ConnectedRouter } from 'react-router-redux'
 import { Route } from 'react-router'
 import store, { history } from './store';
 
-import App from './components/App';
-import List from './components/List';
-import Map from './components/Map';
-import Favorites from './components/Favorites';
-import Stop from './components/Stop';
+import App from './components/app';
+import List from './components/list';
+import Map from './components/map';
+import Favorites from './components/favorites';
+import Stop from './components/stop';
 
 ReactDOM.render(
   <Provider store={store}>

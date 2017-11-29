@@ -2,7 +2,7 @@ import {
   STOP_INFO_LOAD_START,
   STOP_INFO_LOAD_SUCCESS,
   STOP_INFO_LOAD_FAILURE
-} from '../actions/actionTypes.js'
+} from '../actions/action_types.js'
 
 const initialState = {
   inProgress: false,

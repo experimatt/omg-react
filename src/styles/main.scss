@@ -94,6 +94,15 @@ footer {
   width: 100%;
 }
 
+.arrival-chip {
+  color: $white;
+
+  .p5  {background-color: $chip_red;}
+  .p10 {background-color: $chip_yellow;}
+  .p20 {background-color: $chip_grey;}
+  .pnd {background-color: black;}
+}
+
 .arrival-bar {
   display: inline-block;
   width: 100%;
@@ -101,6 +110,12 @@ footer {
   line-height: 20px;
   font-size: 22px;
   border-bottom: 1px solid $grey;
+  // color: $dark_grey;
+  // background-color: $white;
+
+  .p5  {background-color: $chip_red; color: $white;}
+  .p10 {background-color: $chip_yellow; color: $white;}
+  .p20 {background-color: $white; color: $dark_grey;}
 }
 
 .arrival-info {
@@ -110,14 +125,14 @@ footer {
   padding: 8px 4px 4px;
   vertical-align: middle;
   text-align: left;
-  
-  .arrival-description {
-    font-size: 12px;
-  }
+}
+
+.description-text {
+  font-size: 12px;
 }
 
 .arrival-time {
-  display: flex;
+  display: inline-block;
   float: right;
   font-style: italic;
   padding-right: 4px;

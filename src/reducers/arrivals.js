@@ -2,7 +2,7 @@ import {
   ARRIVALS_LOAD_START,
   ARRIVALS_LOAD_SUCCESS,
   ARRIVALS_LOAD_FAILURE
-} from '../actions/actionTypes'
+} from '../actions/action_types'
 
 const initialState = {
   inProgress: false,

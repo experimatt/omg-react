@@ -5,7 +5,7 @@ import {
   STOP_INFO_LOAD_START,
   STOP_INFO_LOAD_SUCCESS,
   STOP_INFO_LOAD_FAILURE
-} from './actionTypes.js'
+} from './action_types.js'
 
 export const loadArrivalsStart = () => {
   return { type: ARRIVALS_LOAD_START }

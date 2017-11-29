@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ArrivalBar from './ArrivalBar'
-import { staticArrivals } from '../utils/Offline'
+import ArrivalBar from './arrival_bar'
+import { arrivals } from '../utils/static_data'
+// import { loadStopArrivals } from '../actions/dispatches'
 
 class Stop extends Component {
   constructor() {
@@ -12,26 +13,24 @@ class Stop extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
-    // let stopId = this.props.match.params.id
-    // this.loadStopArrivals(stopId);
-    this.loadStaticStopArrivals();
-  }
-
-  // for offline use
-  loadStaticStopArrivals() {
-    this.setState({ arrivals: staticArrivals })
+    let stopId = this.props.match.params.id
+    this.loadStopArrivals(stopId)
+    // this.loadStaticStopArrivals();
   }
 
   loadStopArrivals(stopId) {
     const url = `http://svc.metrotransit.org/NexTrip/${stopId}?format=json`
     fetch(url)
     .then(response=>response.json())
-    .then(data =>
-      this.setState({ arrivals: data })
-    ).catch(function(error) {
+    .then(data => this.setState({ arrivals: data }))
+    .catch(function(error) {
       console.log(error);
     });
+  }
+
+  // for offline use
+  loadStaticStopArrivals() {
+    this.setState({ arrivals: arrivals })
   }
 
   render() {

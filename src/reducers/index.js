@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import { stopInfo } from './stopInfo'
+import { stopInfo } from './stop_info'
 import { arrivals } from './arrivals'
 
 const rootReducer = combineReducers({
