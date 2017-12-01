@@ -6,7 +6,7 @@ import { arrivals } from './arrivals'
 const rootReducer = combineReducers({
   routing: routerReducer,
   stopInfo,
-  arrivals,
+  arrivals
 })
 
 export default rootReducer;

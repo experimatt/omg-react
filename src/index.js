@@ -9,7 +9,7 @@ import App from './components/app';
 import List from './components/list';
 import Map from './components/map';
 import Favorites from './components/favorites';
-import Stop from './components/stop';
+import Stop from './containers/stop';
 
 ReactDOM.render(
   <Provider store={store}>

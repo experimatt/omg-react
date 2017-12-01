@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import ArrivalChip from './arrival_chip'
-// import { arrivals } from '../utils/static_data'
 
 class StopPreview extends Component {
   constructor() {

@@ -1,32 +1,29 @@
-import {
-  ARRIVALS_LOAD_START,
-  ARRIVALS_LOAD_SUCCESS,
-  ARRIVALS_LOAD_FAILURE,
-  STOP_INFO_LOAD_START,
-  STOP_INFO_LOAD_SUCCESS,
-  STOP_INFO_LOAD_FAILURE
-} from './action_types.js'
+import axios from 'axios'
+import * as types from './action_types'
 
-export const loadArrivalsStart = () => {
-  return { type: ARRIVALS_LOAD_START }
+export function loadStopArrivals(stopId) {
+  const url = `http://svc.metrotransit.org/NexTrip/${stopId}?format=json`
+  return function(dispatch) {
+    dispatch({ type: types.ARRIVALS.START })
+    axios.get(url)
+    .then((response) => {
+      dispatch({
+        type: types.ARRIVALS.SUCCESS,
+        payload: { stopId: stopId, data: response.data, }
+      })
+    })
+    .catch((error) => {
+      dispatch({
+        type: types.ARRIVALS.FAILURE,
+        payload: error
+      })
+    })
+  }
 }
 
-export const loadArrivalsSuccess = (arrivals) => {
-  return { type: ARRIVALS_LOAD_SUCCESS, arrivals }
-}
-
-export const loadArrivalsFailure = (errors) => {
-  return { type: ARRIVALS_LOAD_FAILURE, errors }
-}
- d
-export const loadStopInfoStart = () => {
-  return { type: STOP_INFO_LOAD_START }
-}
-
-export const loadStopInfoSuccess = (stopInfo) => {
-  return { type: STOP_INFO_LOAD_SUCCESS, stopInfo }
-}
-
-export const loadStopInfoFailure = (errors) => {
-  return { type: STOP_INFO_LOAD_FAILURE, errors }
+export function loadStopInfo(stopId) {
+  return function(dispatch) {
+    dispatch({ type: types.STOP_INFO.START })
+  }
+  // TODO: Load data from json stop data here
 }
