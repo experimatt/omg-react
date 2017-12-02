@@ -23,7 +23,7 @@ const ArrivalBar = (props) => {
   return (
     <div className={`arrival-bar ${colorCoding}`}>
       <div className='arrival-info'>
-        <i className={arrowClass}></i>{props.Route}<br />
+        <i className={arrowClass}></i>&nbsp;{props.Route}<br />
         <span className='description-text'> { props.Description }</span>
       </div>
       <div className='arrival-time'>

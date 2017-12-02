@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StopPreview from './stop_preview'
-import { stopInfo } from '../utils/static_data'
+import { stopInfo } from '../static/helpers'
 
 class List extends Component {
   constructor() {
@@ -15,7 +15,7 @@ class List extends Component {
   getUserLocation() {
     this.setState({ coords: [44.963244, -93.195938] })
   }
-  
+
   componentDidMount() {
     let coords = this.getUserLocation()
     this.getNearbyStops(coords);

@@ -3,10 +3,11 @@ import StopComponent from '../components/stop'
 import { loadStopInfo, loadStopArrivals } from '../actions/actions'
 
 const mapStateToProps = (state, ownProps) => {
+  const stopId = ownProps.match.params.id
   return {
-    stopId: ownProps.match.params.id,
-    stopInfo: state.stopInfo,
-    arrivals: state.arrivals
+    stopId: stopId,
+    stopInfo: state.stopInfo[stopId],
+    arrivals: state.arrivals[stopId]
   }
 }
 
