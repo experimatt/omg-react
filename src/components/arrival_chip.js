@@ -13,9 +13,8 @@ const ArrivalChip = (props) => {
   
   let minutesAway = moment(props.DepartureTime).diff(moment().startOf('minute'),'minutes')
   let chipClass = 'p20'
-  // let separator = String.fromCharCode(8226)
-  if (minutesAway <= 5) {chipClass = 'p5'}
   if (minutesAway <= 10) {chipClass = 'p10'}
+  if (minutesAway <= 5) {chipClass = 'p5'}
 
   return (
     <span className={`arrival-chip ${chipClass}`}>

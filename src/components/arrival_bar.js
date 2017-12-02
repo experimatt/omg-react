@@ -10,18 +10,14 @@ let directionMappings = {
 
 const ArrivalBar = (props) => {
   let arrowClass = `icon-omg-arrow-${directionMappings[props.RouteDirection]}`
+
   let minutesAway = moment(props.DepartureTime).diff(moment().startOf('minute'),'minutes')
-  let colorCoding
-  if (minutesAway <= 5) {
-    colorCoding = 'p5'
-  } else if (minutesAway <= 10) {
-    colorCoding = 'p10'
-  } else {
-    colorCoding = 'p20'
-  }
+  let chipClass = 'p20'
+  if (minutesAway <= 10) {chipClass = 'p10'}
+  if (minutesAway <= 5) {chipClass = 'p5'}
 
   return (
-    <div className={`arrival-bar ${colorCoding}`}>
+    <div className={`arrival-bar ${chipClass}`}>
       <div className='arrival-info'>
         <i className={arrowClass}></i>&nbsp;{props.Route}<br />
         <span className='description-text'> { props.Description }</span>

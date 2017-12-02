@@ -145,6 +145,7 @@ footer {
 .stop-title {
   font-size: 15px;
   text-transform: uppercase;
+  text-overflow: ellipsis;
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
@@ -155,8 +156,10 @@ footer {
 .arrival-chip {
   color: #fff;
   font-size: 12px;
-  padding: 3px;
-  margin: 2px 5px 2px 2px; }
+  padding: 3px 4px;
+  margin: 0 3px 3px 0;
+  height: 20px;
+  border-radius: 2px; }
   .arrival-chip.p5 {
     background-color: #b94a48; }
   .arrival-chip.p10 {
@@ -177,13 +180,13 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  .arrival-bar .p5 {
+  .arrival-bar.p5 {
     background-color: #b94a48;
     color: #fff; }
-  .arrival-bar .p10 {
+  .arrival-bar.p10 {
     background-color: #f89406;
     color: #fff; }
-  .arrival-bar .p20 {
+  .arrival-bar.p20 {
     background-color: #fff;
     color: #686868; }
 
