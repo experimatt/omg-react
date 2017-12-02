@@ -54,7 +54,7 @@ footer {
   font-weight: 300;
 }
 
-.map {
+.map-container {
   width: 100%;
   font-family: $font_regular;
   font-weight: 300;
@@ -87,6 +87,7 @@ footer {
 }
 
 .stop-title {
+  font-size: 15px;
   text-transform: uppercase;
 }
 
@@ -96,11 +97,14 @@ footer {
 
 .arrival-chip {
   color: $white;
+  font-size: 12px;
+  padding: 3px;
+  margin: 2px 5px 2px 2px;
 
-  .p5  {background-color: $chip_red;}
-  .p10 {background-color: $chip_yellow;}
-  .p20 {background-color: $chip_grey;}
-  .pnd {background-color: black;}
+  &.p5  { background-color: $chip_red; }
+  &.p10 { background-color: $chip_yellow; }
+  &.p20 { background-color: $chip_grey; }
+  &.pnd { background-color: black; }
 }
 
 .arrival-bar {

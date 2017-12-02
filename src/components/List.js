@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StopPreview from './stop_preview'
+import StopPreview from '../containers/stop_preview'
 import { stopInfo } from '../static/helpers'
 
 class List extends Component {

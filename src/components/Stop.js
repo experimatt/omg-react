@@ -8,13 +8,12 @@ class Stop extends Component {
   }
 
   render() {
-    let stopInfo = this.props.stopInfo || {}
-    let arrivals = this.props.arrivals || []
+    console.log(this.props.arrivals);
     return (
       <div className="stop main-container">
-        <div className='stop-heading'>{ stopInfo.stop_name }</div>
+        <div className='stop-heading'>{ this.props.stopInfo.stop_name }</div>
         <div className='arrivals'>
-        { arrivals.map((arrival) =>
+        { this.props.arrivals.map((arrival) =>
           <ArrivalBar key={arrival.BlockNumber} {...arrival} />
         )}
         </div>

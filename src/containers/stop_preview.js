@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
-import StopComponent from '../components/stop'
+import StopPreviewComponent from '../components/stop_preview'
 import { loadStopInfo, loadStopArrivals } from '../actions/actions'
 
 const mapStateToProps = (state, ownProps) => {
-  const stopId = ownProps.match.params.id
+  const stopId = ownProps.stop_id
   return {
     stopId: stopId,
     stopInfo: state.stopInfo[stopId] || {},
@@ -16,4 +16,4 @@ const mapDispatchToProps = {
   loadStopArrivals
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(StopComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(StopPreviewComponent);

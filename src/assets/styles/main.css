@@ -114,7 +114,7 @@ footer {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300; }
 
-.map {
+.map-container {
   width: 100%;
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300; }
@@ -142,20 +142,24 @@ footer {
     color: #686868; }
 
 .stop-title {
+  font-size: 15px;
   text-transform: uppercase; }
 
 .arrivals {
   width: 100%; }
 
 .arrival-chip {
-  color: #fff; }
-  .arrival-chip .p5 {
+  color: #fff;
+  font-size: 12px;
+  padding: 3px;
+  margin: 2px 5px 2px 2px; }
+  .arrival-chip.p5 {
     background-color: #b94a48; }
-  .arrival-chip .p10 {
+  .arrival-chip.p10 {
     background-color: #f89406; }
-  .arrival-chip .p20 {
+  .arrival-chip.p20 {
     background-color: #c0c0c0; }
-  .arrival-chip .pnd {
+  .arrival-chip.pnd {
     background-color: black; }
 
 .arrival-bar {

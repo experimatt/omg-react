@@ -10,22 +10,17 @@ let directionMappings = {
 
 const ArrivalChip = (props) => {
   let arrowClass = `icon-omg-arrow-${directionMappings[props.RouteDirection]}`
-  let chipColor = 'red'
   
-  // if (props.Actual && 10 < 5) {
-  //   return 'arrival-chip-red'
-  // }
-  // let chipClass = {
-  //   SWITCH
-  // }
-  console.log(moment(props.Actual));
-  console.log(moment(props.DepartureTime).toString());
-  console.log(moment().diff(moment(props.DepartureTime),'minutes)').fromNow());
-  
+  let minutesAway = moment(props.DepartureTime).diff(moment().startOf('minute'),'minutes')
+  let chipClass = 'p20'
+  // let separator = String.fromCharCode(8226)
+  if (minutesAway <= 5) {chipClass = 'p5'}
+  if (minutesAway <= 10) {chipClass = 'p10'}
+
   return (
-    <div className={`arrival-chip ${chipColor}`}>
-      <i className={arrowClass}></i>{ props.Route}{props.Actual && "-" && props.DepartureText }
-    </div>
+    <span className={`arrival-chip ${chipClass}`}>
+      <i className={arrowClass}></i> { props.Route}{props.Actual && ` • ${minutesAway} Min` }
+    </span>
   )
 }
 

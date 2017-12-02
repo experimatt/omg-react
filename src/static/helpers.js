@@ -21,6 +21,18 @@ export const stopInfo = [
     wheelchair_boarding: 1
   },
   {
+    stop_id:              15876,
+    stop_code:            null,
+    stop_name:            "University Ave & Carleton St",
+    stop_desc:            "Near side W",
+    stop_lat:             44.963425,
+    stop_lon:             -93.195927,
+    zone_id:              null,
+    stop_url:             "http://www.metrotransit.org/NexTripBadge.aspx?stopnumber=15876",
+    location_type:        0,
+    wheelchair_boarding:  1
+  },
+  {
     stop_id:             56005,
     stop_code:           null,
     stop_name:           "Westgate Station",
