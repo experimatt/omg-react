@@ -128,7 +128,8 @@ footer {
   text-align: left;
   vertical-align: middle;
   text-overflow: ellipsis;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  flex-direction: row; }
 
 .stop-preview {
   display: block;
@@ -143,7 +144,10 @@ footer {
 
 .stop-title {
   font-size: 15px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
 
 .arrivals {
   width: 100%; }
@@ -168,7 +172,11 @@ footer {
   height: 67px;
   line-height: 20px;
   font-size: 22px;
-  border-bottom: 1px solid #efefef; }
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
   .arrival-bar .p5 {
     background-color: #b94a48;
     color: #fff; }

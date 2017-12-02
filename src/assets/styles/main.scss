@@ -70,6 +70,7 @@ footer {
   vertical-align: middle;
   text-overflow: ellipsis;
   text-transform: uppercase;
+  flex-direction: row;
 }
 
 .stop-preview {
@@ -89,6 +90,9 @@ footer {
 .stop-title {
   font-size: 15px;
   text-transform: uppercase;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .arrivals {
@@ -114,8 +118,10 @@ footer {
   line-height: 20px;
   font-size: 22px;
   border-bottom: 1px solid $grey;
-  // color: $dark_grey;
-  // background-color: $white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   .p5  {background-color: $chip_red; color: $white;}
   .p10 {background-color: $chip_yellow; color: $white;}
