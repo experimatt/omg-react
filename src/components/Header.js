@@ -1,5 +1,5 @@
 import React from 'react';
-import headerLogo from '../images/omg-header-words.svg';
+import headerLogo from '../assets/images/omg-header-words.svg';
 
 const Header = () => (
     <header>

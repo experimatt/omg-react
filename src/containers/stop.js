@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import StopComponent from '../components/stop'
-import { loadStopArrivals, loadStopInfo } from '../actions/actions'
+import { loadStopInfo, loadStopArrivals } from '../actions/actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {
