@@ -196,10 +196,12 @@ footer {
   width: 25%;
   padding: 8px 4px 4px;
   vertical-align: middle;
-  text-align: left; }
+  text-align: left;
+  overflow: hidden; }
 
 .description-text {
-  font-size: 12px; }
+  font-size: 12px;
+  text-overflow: ellipsis; }
 
 .arrival-time {
   display: inline-block;
