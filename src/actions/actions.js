@@ -2,6 +2,12 @@ import axios from 'axios'
 import * as types from './action_types'
 import stops from '../static/stops.json'
 import _find from 'lodash/find'
+import _uniqBy from 'lodash/uniqBy'
+import _reverse from 'lodash/reverse'
+
+function dedupeArrivals(arrivals) {
+  return _reverse(_uniqBy(_reverse(arrivals), 'BlockNumber'))
+}
 
 export function loadStopArrivals(stopId) {
   const url = `http://svc.metrotransit.org/NexTrip/${stopId}?format=json`
@@ -11,7 +17,7 @@ export function loadStopArrivals(stopId) {
     .then((response) => {
       dispatch({
         type: types.ARRIVALS.SUCCESS,
-        payload: { stopId: stopId, data: response.data, }
+        payload: { stopId: stopId, data: dedupeArrivals(response.data) }
       })
     })
     .catch((error) => {

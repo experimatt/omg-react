@@ -1,25 +1,22 @@
 import React from 'react';
 import moment from 'moment';
-
-let directionMappings = {
-  'NORTHBOUND': 'up',
-  'EASTBOUND': 'right',
-  'SOUTHBOUND': 'down',
-  'WESTBOUND': 'left',
-}
+import { arrowDirection } from '../util/helpers'
 
 const ArrivalBar = (props) => {
-  let arrowClass = `icon-omg-arrow-${directionMappings[props.RouteDirection]}`
-  let arrivalTime = moment(props.DepartureTime).format("h:mma")
-
-  let minutesAway = moment(props.DepartureTime).diff(moment().startOf('minute'),'minutes')
+  let arrowClass = `icon-omg-arrow-${arrowDirection(props.RouteDirection)}`
+  let arrivalTime = moment(props.DepartureTime)
+  let minutesAway = arrivalTime.diff(moment().startOf('minute'),'minutes')
+  let arrivalText = arrivalTime.format("h:mm")
   let chipClass = 'p20'
-  if (minutesAway <= 10) {chipClass = 'p10'}
-  if (minutesAway <= 5) {chipClass = 'p5'}
+  let realTime = (minutesAway <= 20)
 
-  let arrivalText = ( props.Actual ? `${minutesAway} min` : arrivalTime )
-  let realTimeUnavailable = ( !props.Actual && minutesAway < 20 && <i title="Real-time data unavailable" className="fa fa-question-circle"></i> )
-  let descriptionText = ( props.Actual && arrivalTime )
+  if (realTime) {arrivalText = `${minutesAway} Min`}
+  if (minutesAway <= 10) {chipClass = 'p10'}
+  if (minutesAway <= 5)  {chipClass = 'p5'}
+  if (minutesAway <= 1)  {arrivalText = 'Now'}
+
+  let descriptionText = ( realTime && arrivalTime.format("h:mm a") )
+  let realTimeUnavailable = ( realTime && !props.Actual && <i title="Real-time data unavailable" className="fa fa-question-circle"></i> )
 
   return (
     <div className={`arrival-bar ${chipClass}`}>
@@ -28,10 +25,10 @@ const ArrivalBar = (props) => {
         <span className='description-text'> { props.Description }</span>
       </div>
       <div className='arrival-time'>
-        { arrivalText }
+        { arrivalText } { realTimeUnavailable }
         <br />
         <div className='description-text'>
-          { descriptionText } { realTimeUnavailable }
+        { descriptionText }
         </div>
       </div>
     </div>

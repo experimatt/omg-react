@@ -33,5 +33,8 @@
     * i.e. http://svc.metrotransit.org/NexTrip/56006?format=json
     * Source: http://svc.metrotransit.org/
   * GTFS Stop data
-    * Direct download (`stops.txt`) ftp://ftp.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/trans_transit_schedule_google_fd/csv_trans_transit_schedule_google_fd.zip
-    * Source: https://gisdata.mn.gov/dataset/us-mn-state-metc-trans-transit-schedule-google-fd
+    * Source 1: MAY BE STALE
+      * Direct download (`stops.txt`) ftp://ftp.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/trans_transit_schedule_google_fd/csv_trans_transit_schedule_google_fd.zip
+      * Source: https://gisdata.mn.gov/dataset/us-mn-state-metc-trans-transit-schedule-google-fd
+    * Source 2:
+      * https://transitfeeds.com/p/metro-transit/179

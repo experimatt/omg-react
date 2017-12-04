@@ -1,24 +1,25 @@
 import React from 'react';
 import moment from 'moment';
-
-let directionMappings = {
-  'NORTHBOUND': 'up',
-  'EASTBOUND': 'right',
-  'SOUTHBOUND': 'down',
-  'WESTBOUND': 'left',
-}
+import { arrowDirection } from '../util/helpers'
 
 const ArrivalChip = (props) => {
-  let arrowClass = `icon-omg-arrow-${directionMappings[props.RouteDirection]}`
-  
-  let minutesAway = moment(props.DepartureTime).diff(moment().startOf('minute'),'minutes')
+  let arrowClass = `icon-omg-arrow-${arrowDirection(props.RouteDirection)}`
+  let arrivalTime = moment(props.DepartureTime)
+  let minutesAway = arrivalTime.diff(moment().startOf('minute'),'minutes')
+  let arrivalText = arrivalTime.format("h:mm")
+  let realTime = (minutesAway <= 20)
   let chipClass = 'p20'
+
+  if (realTime) {arrivalText = `${minutesAway} Min`}
   if (minutesAway <= 10) {chipClass = 'p10'}
   if (minutesAway <= 5) {chipClass = 'p5'}
+  if (minutesAway < 1)  {arrivalText = 'Now'}
+  let realTimeUnavailable = ( realTime && !props.Actual && <i title="Real-time data unavailable" className="fa fa-question-circle"></i> )
 
   return (
     <span className={`arrival-chip ${chipClass}`}>
-      <i className={arrowClass}></i> { props.Route}{props.Actual && ` • ${minutesAway} Min` }
+      <i className={arrowClass}></i> {props.Route}{props.Terminal}
+       { props.Actual && ` • ${arrivalText}`} { realTimeUnavailable }
     </span>
   )
 }
