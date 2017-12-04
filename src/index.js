@@ -7,7 +7,7 @@ import store, { history } from './store';
 
 import App from './components/app';
 import List from './components/list';
-import Map from './components/map';
+import Map from './containers/map';
 import Favorites from './components/favorites';
 import Stop from './containers/stop';
 

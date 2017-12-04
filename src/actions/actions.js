@@ -46,3 +46,20 @@ export function loadStopInfo(stopId) {
     }
   }
 }
+
+export function updateGeolocation() {
+  return function(dispatch) {
+    dispatch({ type: types.GEOLOCATION.START })
+    navigator.geolocation.getCurrentPosition((position) => {
+      dispatch({
+          type: types.GEOLOCATION.SUCCESS,
+          payload: position
+      })
+    },(error) => {
+      dispatch({
+          type: types.GEOLOCATION.FAILURE,
+          payload: error
+      })
+    });
+  }
+}

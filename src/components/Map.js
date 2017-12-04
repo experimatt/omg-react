@@ -12,7 +12,6 @@ const BusIcon = ({ text }) => {
 }
 
 class Map extends Component {
-
   createMapOptions(maps) {
     var mapStyles = [{ featureType: "poi", elementType: "labels", stylers: [ { visibility: "off" } ]}];
     return {
@@ -27,19 +26,22 @@ class Map extends Component {
   }
 
   render() {
-    const defaultCoords = { lat: 44.963244, lng: -93.195938 }
+    const coords = {
+      lat: this.props.lat || 44.963244,
+      lng: this.props.lng || -93.195938,
+    }
 
     return (
       <div className='map-container'>
         <GoogleMapReact
           bootstrapURLKeys={{ key: googleMapsAPIKey() }}
-          center={ defaultCoords }
+          center={ coords }
           zoom= { 16 }
           options={this.createMapOptions}
         >
           <BusIcon
-            lat={44.963244}
-            lng={-93.195938}
+            lat={coords.lat}
+            lng={coords.lng}
           />
         </GoogleMapReact>
       </div>
