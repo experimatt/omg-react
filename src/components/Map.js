@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import { googleMapsAPIKey } from '../util/helpers'
 import busIcon from '../assets/images/pin-bus.png'
 
 const BusIcon = ({ text }) => {
@@ -26,15 +27,14 @@ class Map extends Component {
   }
 
   render() {
-    const api_key = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
     const defaultCoords = { lat: 44.963244, lng: -93.195938 }
 
     return (
       <div className='map-container'>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: api_key }}
-          defaultCenter={ defaultCoords }
-          defaultZoom= { 16 }
+          bootstrapURLKeys={{ key: googleMapsAPIKey() }}
+          center={ defaultCoords }
+          zoom= { 16 }
           options={this.createMapOptions}
         >
           <BusIcon

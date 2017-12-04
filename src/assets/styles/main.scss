@@ -62,17 +62,34 @@ footer {
   font-weight: 300;
 }
 
-.stop-heading {
+.stop-map-preview {
+  width: 100%;
+  height: 130px;
+  margin: 0 auto;
+}
+
+.stop-heading-bar {
   background-color: $grey;
   color: $dark_grey;
-  font-size: 22px;
-  font-weight: 300;
   height: 60px;
   text-align: left;
   vertical-align: middle;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
+  display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stop-heading {
+  font-size: 23px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  padding-left: 10px
+}
+
+.favorite {
+  padding: 10px;
 }
 
 .stop-preview {
