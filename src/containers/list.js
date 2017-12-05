@@ -1,18 +1,16 @@
 import { connect } from 'react-redux'
 import ListComponent from '../components/list'
-import { loadNearbyStops, calculateStopDistances } from '../actions/actions'
+import { loadNearbyStops } from '../actions/actions'
 
 const mapStateToProps = (state) => {
   return {
-    coords: state.geolocation.coords || {},
-    nearbyStops: state.nearbyStops || [],
-    stopDistances: state.stopDistances || []
+    geolocation: state.geolocation,
+    nearbyStops: state.nearbyStops
   }
 }
 
 const mapDispatchToProps = {
-  loadNearbyStops,
-  calculateStopDistances
+  loadNearbyStops
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListComponent);

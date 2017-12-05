@@ -5,13 +5,14 @@ import ArrivalChip from './arrival_chip'
 class StopPreview extends Component {
   componentDidMount() {
     this.props.loadStopArrivals(this.props.stopId)
+    this.props.loadStopInfo(this.props.stopId)
   }
 
   render() {
     return (
       <div className="stop-preview">
-        <Link to={ `/stops/${this.props.stop_id}` }>
-          <div className='stop-title'>{ this.props.stop_name }</div>
+        <Link to={ `/stops/${this.props.stopId}` }>
+          <div className='stop-title'>{ this.props.stopInfo.stop_name }</div>
           <div className='stop-arrival-chips'>
             { this.props.arrivals.slice(0,4).map((arrival) =>
               <ArrivalChip key={arrival.BlockNumber} {...arrival} />

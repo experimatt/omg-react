@@ -12,16 +12,13 @@ export function googleMapsAPIKey() {
 }
 
 export function getLatLonFromCoords(coords, isLoading=false) {
-    const defaultCoords = {
-      lat: 44.975918,
-      lng: -93.273079
-    }
+  const defaultCoords = { lat: 44.975918, lng: -93.273079 }
 
-    if (isLoading) { return defaultCoords }
-    if (!isLoading) {
-      return {
-        lat: coords.latitude,
-        lng: coords.longitude
-      }
+  if (isLoading) { return defaultCoords }
+  if (!isLoading) {
+    return {
+      lat: coords.latitude,
+      lng: coords.longitude
     }
   }
+}

@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 class LocationUpdater extends Component {
   componentDidMount() {
-    this.props.updateGeolocation();
+    this.props.updateGeolocation()
   }
 
   render() { return null }
