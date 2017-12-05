@@ -3,8 +3,10 @@ import MapComponent from '../components/map'
 
 const mapStateToProps = (state) => {
   return {
-    lat: (state.geolocation.coords && state.geolocation.coords.latitude),
-    lng: (state.geolocation.coords && state.geolocation.coords.longitude)
+    isLoading: state.geolocation.isLoading,
+    coords: state.geolocation.coords || {}
+    // TODO: keep track of when user pans around the map
+    // mapCoords: state.mapCoords || {}
   }
 }
 

@@ -4,6 +4,7 @@ import stops from '../static/stops.json'
 import _find from 'lodash/find'
 import _uniqBy from 'lodash/uniqBy'
 import _reverse from 'lodash/reverse'
+import { staticStops } from '../static/helpers'
 
 function dedupeArrivals(arrivals) {
   return _reverse(_uniqBy(_reverse(arrivals), 'BlockNumber'))
@@ -51,15 +52,33 @@ export function updateGeolocation() {
   return function(dispatch) {
     dispatch({ type: types.GEOLOCATION.START })
     navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
       dispatch({
           type: types.GEOLOCATION.SUCCESS,
           payload: position
       })
+      calculateStopDistances(position.coords)
     },(error) => {
       dispatch({
           type: types.GEOLOCATION.FAILURE,
           payload: error
       })
-    });
+    })
+  }
+}
+
+export function loadNearbyStops(coords) {
+  return function(dispatch) {
+    dispatch({ type: types.NEARBY_STOPS.START })
+    dispatch({
+        type: types.NEARBY_STOPS.SUCCESS,
+        payload: staticStops // hard coded for now
+    })
+  }
+}
+
+export function calculateStopDistances(coords) {
+  return function(dispatch) {
+    dispatch({ type: types.STOP_DISTANCES.START })
   }
 }

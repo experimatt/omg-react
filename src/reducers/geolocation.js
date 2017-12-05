@@ -1,9 +1,18 @@
 import { GEOLOCATION } from '../actions/action_types'
 
-export const geolocation = (state = {}, action) => {
+const initialState = {
+  isLoading: true
+}
+
+export const geolocation = (state = initialState, action) => {
   switch (action.type) {
     case GEOLOCATION.SUCCESS:
-      return action.payload
+      return {
+        ...state,
+        isLoading: false,
+        coords: action.payload.coords,
+        timestamp: action.payload.timestamp
+      }
     default:
       return state
   }

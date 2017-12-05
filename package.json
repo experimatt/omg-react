@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "geolib": "^2.0.24",
     "google-map-react": "^0.25.0",
     "lodash": "^4.17.4",
     "moment": "^2.19.2",
