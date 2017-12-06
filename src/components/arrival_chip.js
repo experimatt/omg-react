@@ -5,7 +5,7 @@ import { arrowDirection } from '../util/helpers'
 const ArrivalChip = (props) => {
   let arrowClass = `icon-omg-arrow-${arrowDirection(props.RouteDirection)}`
   let arrivalTime = moment(props.DepartureTime)
-  let minutesAway = arrivalTime.diff(moment().startOf('minute'),'minutes')
+  let minutesAway = arrivalTime.diff(moment(),'minutes')
   let arrivalText = arrivalTime.format("h:mm")
   let realTime = (minutesAway < 20)
   let chipClass = 'p20'

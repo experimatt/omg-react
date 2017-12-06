@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { googleMapsAPIKey, getLatLonFromCoords } from '../util/helpers'
+import { googleMapsAPIKey } from '../util/helpers'
 import busIcon from '../assets/images/pin-bus.png'
 
 const BusIcon = ({ text }) => {
@@ -26,7 +26,10 @@ class Map extends Component {
   }
 
   render() {
-    const coords = getLatLonFromCoords(this.props.coords, this.props.isLoading)
+    const coords = {
+      lat: this.props.coords.latitude,
+      lng: this.props.coords.longitude
+    }
 
     return (
       <div className='map-container'>

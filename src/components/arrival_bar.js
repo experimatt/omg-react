@@ -5,7 +5,7 @@ import { arrowDirection } from '../util/helpers'
 const ArrivalBar = (props) => {
   let arrowClass = `icon-omg-arrow-${arrowDirection(props.RouteDirection)}`
   let arrivalTime = moment(props.DepartureTime)
-  let minutesAway = arrivalTime.diff(moment().startOf('minute'),'minutes')
+  let minutesAway = arrivalTime.diff(moment(),'minutes')
   let arrivalText = arrivalTime.format("h:mm")
   let chipClass = 'p20'
   let realTime = (minutesAway < 20)
@@ -13,7 +13,7 @@ const ArrivalBar = (props) => {
   if (realTime) {arrivalText = `${minutesAway} Min`}
   if (minutesAway <= 10) {chipClass = 'p10'}
   if (minutesAway <= 5)  {chipClass = 'p5'}
-  if (minutesAway <= 1)  {arrivalText = 'Now'}
+  if (minutesAway < 1)  {arrivalText = 'Now'}
 
   let descriptionText = ( realTime && arrivalTime.format("h:mm a") )
   let realTimeUnavailable = ( realTime && !props.Actual && <i title="Real-time data unavailable" className="fa fa-question-circle"></i> )

@@ -10,8 +10,9 @@ import { staticStops } from '../static/helpers'
 import geolib from 'geolib'
 
 function dedupeArrivals(arrivals) {
-  return _reverse(_uniqBy(_reverse(arrivals), 'BlockNumber'))
+  return _reverse(_uniqBy(_reverse(arrivals), function(a) { return [a.BlockNumber, a.DepartureTime].join('-'); }))
 }
+
 
 export function loadStopArrivals(stopId) {
   const url = `http://svc.metrotransit.org/NexTrip/${stopId}?format=json`

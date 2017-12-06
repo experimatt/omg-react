@@ -1,12 +1,12 @@
-This project is a proof-of-concept React version of OMG Transit. It's 100% Javascript and was built using React and Redux.
+This project is an OMG Transit proof-of-concept. It is 100% Javascript and mainly uses React and Redux.
 
-It was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+Bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Setup
 
   1. Clone the repo
   2. Make sure you have node installed
-  3. run `yarn install` (or `npm`, if you prefer)
-  4. get a Google Maps API key and save it as an environment variable
-    * i.e. `export REACT_APP_GOOGLE_MAPS_API_KEY={YOUR KEY}`
+  3. run `yarn install` (or `npm install` if you prefer)
+  4. get a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key) and save it to `.env.local`
+    * i.e. `REACT_APP_GOOGLE_MAPS_API_KEY={KEY_GOES_HERE}`
   5. run `yarn start` to spin up the app
