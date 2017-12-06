@@ -15,8 +15,8 @@ const ArrivalBar = (props) => {
   if (minutesAway <= 5)  {chipClass = 'p5'}
   if (minutesAway < 1)  {arrivalText = 'Now'}
 
-  let descriptionText = ( realTime && arrivalTime.format("h:mm a") )
   let realTimeUnavailable = ( realTime && !props.Actual && <i title="Real-time data unavailable" className="fa fa-question-circle"></i> )
+  let descriptionText = ( realTime && arrivalTime.format("h:mm a") )
 
   return (
     <div className={`arrival-bar ${chipClass}`}>

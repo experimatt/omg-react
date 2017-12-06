@@ -6,7 +6,8 @@ Bootstrapped with [Create React App](https://github.com/facebookincubator/create
 
   1. Clone the repo
   2. Make sure you have node installed
-  3. run `yarn install` (or `npm install` if you prefer)
-  4. get a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key) and save it to `.env.local`
-    * i.e. `REACT_APP_GOOGLE_MAPS_API_KEY={KEY_GOES_HERE}`
-  5. run `yarn start` to spin up the app
+  3. Install yarn `brew install yarn`
+  3. Run `yarn install` (or `npm install` if you prefer)
+  4. Get a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key) and save it to `.env.local`
+      * i.e. `REACT_APP_GOOGLE_MAPS_API_KEY={KEY_GOES_HERE}`
+  5. Run `yarn start` to spin up the app (http://localhost:3000)

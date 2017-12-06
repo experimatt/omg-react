@@ -81,6 +81,7 @@ body {
   text-align: center; }
 
 header {
+  display: inline-block;
   background-color: #162d3d;
   height: 50px;
   width: 100%; }
@@ -103,10 +104,21 @@ footer {
       font-size: 14px;
       display: block; }
 
+.header-container {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto; }
+
 .header-logo {
   width: 121px;
   height: 30px;
-  margin-top: 10px; }
+  padding-top: 10px; }
+
+.back-button {
+  padding-left: 10px;
+  padding-top: 10px;
+  color: white;
+  float: left; }
 
 .main-container {
   width: 80%;

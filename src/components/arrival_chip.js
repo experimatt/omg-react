@@ -7,8 +7,8 @@ const ArrivalChip = (props) => {
   let arrivalTime = moment(props.DepartureTime)
   let minutesAway = arrivalTime.diff(moment(),'minutes')
   let arrivalText = arrivalTime.format("h:mm")
-  let realTime = (minutesAway < 20)
   let chipClass = 'p20'
+  let realTime = (minutesAway < 20)
 
   if (realTime) {arrivalText = `${minutesAway} Min`}
   if (minutesAway <= 10) {chipClass = 'p10'}

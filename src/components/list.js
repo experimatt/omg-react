@@ -7,7 +7,6 @@ class List extends Component {
   }
 
   render() {
-    console.log(this.props.nearbyStops);
     return (
       <div className='list main-container'>
         { this.props.nearbyStops.map((stop) =>

@@ -13,7 +13,6 @@ function dedupeArrivals(arrivals) {
   return _reverse(_uniqBy(_reverse(arrivals), function(a) { return [a.BlockNumber, a.DepartureTime].join('-'); }))
 }
 
-
 export function loadStopArrivals(stopId) {
   const url = `http://svc.metrotransit.org/NexTrip/${stopId}?format=json`
   return function(dispatch) {
@@ -73,7 +72,6 @@ export function loadNearbyStops(coords) {
   return function(dispatch) {
     dispatch({ type: types.NEARBY_STOPS.START })
     const nearbyStops = calculateStopDistances(coords, staticStops)
-
     // allStops.slice(0,49)
 
     dispatch({

@@ -8,8 +8,6 @@ const initialState = {
 export const geolocation = (state = initialState, action) => {
   switch (action.type) {
     case GEOLOCATION.SUCCESS:
-      console.log(typeof action.payload.coords);
-      console.log(action.payload.coords);
       return {
         isLoading: false,
         coords: action.payload.coords,

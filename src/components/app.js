@@ -1,7 +1,7 @@
 import React from 'react';
+import LocationUpdater from '../containers/location_updater'
 import Header from './header'
 import Footer from './footer'
-import LocationUpdater from '../containers/location_updater'
 import '../assets/styles/main.css';
 
 const App = (props) => (

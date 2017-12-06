@@ -13,6 +13,7 @@ body {
 }
 
 header {
+  display: inline-block;
   background-color: #162d3d;
   height: 50px;
   width: 100%;
@@ -41,10 +42,28 @@ footer {
   }
 }
 
+.header-container {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // align-items: center;
+  // text-align: center;
+}
+
 .header-logo {
-    width: 121px;
-    height: 30px;
-    margin-top: 10px;
+  width: 121px;
+  height: 30px;
+  padding-top: 10px;
+}
+
+.back-button {
+  padding-left: 10px;
+  padding-top: 10px;
+  color: white;
+  float: left;
 }
 
 .main-container {
