@@ -1,16 +1,18 @@
 import axios from 'axios'
 import * as types from './action_types'
 import allStops from '../static/stops_all.json'
-import _find from 'lodash/find'
-import _uniqBy from 'lodash/uniqBy'
-import _reverse from 'lodash/reverse'
-import _pick from 'lodash/pick'
-import _sortBy from 'lodash/sortBy'
+import railStops from '../static/stops_rail.json'
+import _ from 'lodash'
 import { staticStops } from '../static/helpers'
 import geolib from 'geolib'
 
+function combinedStops() {
+  return _.merge(allStops, railStops)
+}
+
+
 function dedupeArrivals(arrivals) {
-  return _reverse(_uniqBy(_reverse(arrivals), function(a) { return [a.BlockNumber, a.DepartureTime].join('-'); }))
+  return _.reverse(_.uniqBy(_.reverse(arrivals), function(a) { return [a.BlockNumber, a.DepartureTime].join('-'); }))
 }
 
 export function loadStopArrivals(stopId) {
@@ -36,7 +38,7 @@ export function loadStopArrivals(stopId) {
 export function loadStopInfo(stopId) {
   return function(dispatch) {
     dispatch({ type: types.STOP_INFO.START })
-    const stopInfo = _find(allStops, {'stop_id': parseInt(stopId,10)} )
+    const stopInfo = _.find(combinedStops(), {'stop_id': parseInt(stopId,10)} )
     if (stopInfo) {
       dispatch({
         type: types.STOP_INFO.SUCCESS,
@@ -84,11 +86,11 @@ export function loadNearbyStops(coords) {
 function calculateStopDistances(coords, stops) {
   var stopDistances = stops.map((stop) => {
     const distance = geolib.getDistance(
-      _pick(coords, ['latitude', 'longitude']),
+      _.pick(coords, ['latitude', 'longitude']),
       { latitude: stop.stop_lat, longitude: stop.stop_lon },
       100
     )
     return { stopId: stop.stop_id, distance: distance }
   })
-  return _sortBy(stopDistances, 'distance')
+  return _.sortBy(stopDistances, 'distance')
 }
