@@ -1,6 +1,6 @@
 import axios from 'axios'
 import * as types from './action_types'
-import allStops from '../static/stops.json'
+import allStops from '../static/stops_all.json'
 import _find from 'lodash/find'
 import _uniqBy from 'lodash/uniqBy'
 import _reverse from 'lodash/reverse'

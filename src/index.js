@@ -10,6 +10,7 @@ import List from './containers/list';
 import Map from './containers/map';
 import Favorites from './components/favorites';
 import Stop from './containers/stop';
+import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -25,3 +26,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
+registerServiceWorker();
