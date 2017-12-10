@@ -17,6 +17,11 @@ class Favorites extends Component {
 
     return (
       <div className='favorites main-container'>
+        <div className='heading-bar'>
+          <div className='heading bottom-border'>
+            Favorites
+          </div>
+        </div>
         { contents }
       </div>
     )

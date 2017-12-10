@@ -99,6 +99,8 @@ footer {
     color: #fff;
     font-size: 24px;
     text-decoration: none; }
+    footer a.active {
+      color: #ef502e; }
     footer a .text {
       font-weight: 100;
       font-size: 14px;
@@ -138,7 +140,7 @@ footer {
   height: 130px;
   margin: 0 auto; }
 
-.stop-heading-bar {
+.heading-bar {
   background-color: #efefef;
   color: #686868;
   height: 60px;
@@ -149,15 +151,22 @@ footer {
   justify-content: space-between;
   align-items: center; }
 
-.stop-heading {
+.heading, .stop-heading {
   font-size: 23px;
-  font-weight: 300;
+  font-weight: 400;
+  text-align: left;
   text-transform: uppercase;
   text-overflow: ellipsis;
-  padding-left: 10px; }
+  padding: 10px; }
+
+.stop-heading {
+  font-weight: 300; }
 
 .favorite {
   padding: 10px; }
+
+.bottom-border {
+  border-bottom: 1px solid #efefef; }
 
 .stop-preview {
   display: block;
@@ -165,10 +174,13 @@ footer {
   font-size: 18px;
   height: 60px;
   border-bottom: 1px solid #efefef;
-  padding-top: 10px; }
+  padding-top: 10px;
+  padding-left: 10px; }
   .stop-preview a {
     text-decoration: none;
     color: #686868; }
+  .stop-preview:hover {
+    background-color: #efefef; }
 
 .stop-title {
   font-size: 15px;

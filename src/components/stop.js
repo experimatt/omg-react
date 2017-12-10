@@ -18,7 +18,7 @@ class Stop extends Component {
         <div className='stop-map-preview'>
           <MapPreview coords={coords} />
         </div>
-        <div className='stop-heading-bar'>
+        <div className='heading-bar'>
           <div className='stop-heading'>
             { this.props.stopInfo.stop_name }
           </div>

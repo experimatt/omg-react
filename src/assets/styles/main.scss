@@ -34,6 +34,10 @@ footer {
     font-size: 24px;
     text-decoration: none;
 
+    &.active {
+      color: $bg_red;
+    }
+
     .text {
       font-weight: 100;
       font-size: 14px;
@@ -87,7 +91,7 @@ footer {
   margin: 0 auto;
 }
 
-.stop-heading-bar {
+.heading-bar {
   background-color: $grey;
   color: $dark_grey;
   height: 60px;
@@ -99,16 +103,26 @@ footer {
   align-items: center;
 }
 
-.stop-heading {
+.heading {
   font-size: 23px;
-  font-weight: 300;
+  font-weight: 400;
+  text-align: left;
   text-transform: uppercase;
   text-overflow: ellipsis;
-  padding-left: 10px
+  padding: 10px;
+}
+
+.stop-heading {
+  @extend .heading;
+  font-weight: 300;
 }
 
 .favorite {
   padding: 10px;
+}
+
+.bottom-border {
+  border-bottom: 1px solid $grey;
 }
 
 .stop-preview {
@@ -118,10 +132,15 @@ footer {
   height: 60px;
   border-bottom: 1px solid $grey;
   padding-top: 10px;
+  padding-left: 10px;
 
   a {
     text-decoration: none;
     color: $dark_grey;
+  }
+
+  &:hover {
+    background-color: $grey;
   }
 }
 
