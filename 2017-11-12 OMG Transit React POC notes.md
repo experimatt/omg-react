@@ -29,9 +29,9 @@
   3) User favorite stops
 
 # Data sources
-  * Real-time arrivals: http://svc.metrotransit.org/NexTrip/`${stopID}`?format=json
-    * i.e. http://svc.metrotransit.org/NexTrip/56006?format=json
-    * Source: http://svc.metrotransit.org/
+  * Real-time arrivals: https://svc.metrotransit.org/NexTrip/`${stopID}`?format=json
+    * i.e. https://svc.metrotransit.org/NexTrip/56006?format=json
+    * Source: https://svc.metrotransit.org/
   * GTFS Stop data
     * Source 1: MAY BE STALE
       * Direct download (`stops.txt`) ftp://ftp.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/trans_transit_schedule_google_fd/csv_trans_transit_schedule_google_fd.zip

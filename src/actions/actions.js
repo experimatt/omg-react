@@ -21,7 +21,7 @@ function getStopInfo(stopId) {
 
 // actions
 export function loadStopArrivals(stopId) {
-  const url = `http://svc.metrotransit.org/NexTrip/${stopId}?format=json`
+  const url = `https://svc.metrotransit.org/NexTrip/${stopId}?format=json`
   return function(dispatch) {
     dispatch({ type: types.ARRIVALS.START })
     axios.get(url)
