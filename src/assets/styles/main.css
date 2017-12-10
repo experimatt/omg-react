@@ -106,10 +106,51 @@ footer {
       font-size: 14px;
       display: block; }
 
+@media (max-width: 767px) {
+  .header-container {
+    width: 100%; }
+  .main-container {
+    width: 100%; }
+  .heading, .stop-heading {
+    font-size: 19px; }
+  .arrival-time {
+    font-size: 16px; }
+  .description-text {
+    font-size: 10.5px; } }
+
+@media (min-width: 768px) {
+  .header-container {
+    width: 90%; }
+  .main-container {
+    width: 90%; }
+  .heading, .stop-heading {
+    font-size: 23px; }
+  .arrival-time {
+    font-size: 20px; }
+  .description-text {
+    font-size: 12px; } }
+
+@media (min-width: 1024px) {
+  .header-container {
+    width: 80%; }
+  .main-container {
+    width: 80%; } }
+
 .header-container {
-  width: 80%;
   height: 50px;
   margin: 0 auto; }
+
+.main-container {
+  margin: 0 auto;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-weight: 300; }
+
+.map-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-weight: 300; }
 
 .header-logo {
   width: 121px;
@@ -121,19 +162,6 @@ footer {
   padding-top: 10px;
   color: white;
   float: left; }
-
-.main-container {
-  width: 80%;
-  margin: 0 auto;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  font-weight: 300; }
-
-.map-container {
-  width: 100%;
-  height: calc(100vh - 60px);
-  margin: 0 auto;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  font-weight: 300; }
 
 .stop-map-preview {
   width: 100%;
@@ -152,7 +180,6 @@ footer {
   align-items: center; }
 
 .heading, .stop-heading {
-  font-size: 23px;
   font-weight: 400;
   text-align: left;
   text-transform: uppercase;
@@ -192,6 +219,10 @@ footer {
 
 .arrivals {
   width: 100%; }
+
+.stop-arrival-chips {
+  white-space: nowrap;
+  overflow: hidden; }
 
 .arrival-chip {
   color: #fff;
@@ -233,14 +264,12 @@ footer {
 .arrival-info {
   display: inline-block;
   float: left;
-  width: 25%;
   padding: 8px 4px 4px;
   vertical-align: middle;
   text-align: left;
   overflow: hidden; }
 
 .description-text {
-  font-size: 12px;
   text-overflow: ellipsis; }
 
 .arrival-time {

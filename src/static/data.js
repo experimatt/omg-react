@@ -9,4 +9,4 @@ export const staticArrivals = [
 
 export const staticFavorites = [56006,56027,15877,13275,56038,51409]
 
-export const staticNearbyStops = [15798,15877,15878,15797,18636,18647,15799,15876,56006]
+export const staticNearbyStops = [15798,15877,15878,15797,15799,15876,56006,51409]
