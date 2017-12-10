@@ -3,7 +3,7 @@ import StopPreviewComponent from '../components/stop_preview'
 import { loadStopInfo, loadStopArrivals } from '../actions/actions'
 
 const mapStateToProps = (state, ownProps) => {
-  const stopId = ownProps.stopId
+  const stopId = ownProps.stop_id
   return {
     stopId: stopId,
     stopInfo: state.stopInfo[stopId] || {},

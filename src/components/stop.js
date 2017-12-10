@@ -28,7 +28,7 @@ class Stop extends Component {
         </div>
         <div className='arrivals'>
         { this.props.arrivals.map((arrival) =>
-          <ArrivalBar key={arrival.BlockNumber} {...arrival} />
+          <ArrivalBar key={`${this.props.stopId}-${arrival.BlockNumber}-${arrival.DepartureTime}`} {...arrival} />
         )}
         </div>
       </div>

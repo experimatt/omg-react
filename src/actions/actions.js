@@ -3,18 +3,23 @@ import * as types from './action_types'
 import allStops from '../static/stops_all.json'
 import railStops from '../static/stops_rail.json'
 import _ from 'lodash'
-import { staticStops } from '../static/helpers'
+import { staticNearbyStops, staticFavorites } from '../static/data'
 import geolib from 'geolib'
+
+// helper methods
+function dedupeArrivals(arrivals) {
+  return _.reverse(_.uniqBy(_.reverse(arrivals), function(a) { return [a.BlockNumber, a.DepartureTime].join('-'); }))
+}
 
 function combinedStops() {
   return _.merge(allStops, railStops)
 }
 
-
-function dedupeArrivals(arrivals) {
-  return _.reverse(_.uniqBy(_.reverse(arrivals), function(a) { return [a.BlockNumber, a.DepartureTime].join('-'); }))
+function getStopInfo(stopId) {
+  return _.find(combinedStops(), {'stop_id': parseInt(stopId,10)} )
 }
 
+// actions
 export function loadStopArrivals(stopId) {
   const url = `http://svc.metrotransit.org/NexTrip/${stopId}?format=json`
   return function(dispatch) {
@@ -23,7 +28,7 @@ export function loadStopArrivals(stopId) {
     .then((response) => {
       dispatch({
         type: types.ARRIVALS.SUCCESS,
-        payload: { stopId: stopId, data: dedupeArrivals(response.data) }
+        payload: { stop_id: stopId, data: dedupeArrivals(response.data) }
       })
     })
     .catch((error) => {
@@ -38,11 +43,11 @@ export function loadStopArrivals(stopId) {
 export function loadStopInfo(stopId) {
   return function(dispatch) {
     dispatch({ type: types.STOP_INFO.START })
-    const stopInfo = _.find(combinedStops(), {'stop_id': parseInt(stopId,10)} )
+    const stopInfo = getStopInfo(stopId)
     if (stopInfo) {
       dispatch({
         type: types.STOP_INFO.SUCCESS,
-        payload: { stopId: stopId, data: stopInfo, }
+        payload: stopInfo
       })
     } else {
       dispatch({
@@ -73,24 +78,41 @@ export function updateGeolocation() {
 export function loadNearbyStops(coords) {
   return function(dispatch) {
     dispatch({ type: types.NEARBY_STOPS.START })
-    const nearbyStops = calculateStopDistances(coords, staticStops)
-    // allStops.slice(0,49)
+    const nearbyStopIds = calculateStopDistances(coords, staticNearbyStops)
+    const nearbyStops = nearbyStopIds.slice(0,9).map((stop) => {
+      return getStopInfo(stop.stop_id)
+    })
 
     dispatch({
         type: types.NEARBY_STOPS.SUCCESS,
-        payload: nearbyStops.slice(0,9)
+        payload: nearbyStops
     })
   }
 }
 
 function calculateStopDistances(coords, stops) {
-  var stopDistances = stops.map((stop) => {
+  var stopDistances = stops.map((stopId) => {
+    const stopInfo = getStopInfo(stopId)
     const distance = geolib.getDistance(
       _.pick(coords, ['latitude', 'longitude']),
-      { latitude: stop.stop_lat, longitude: stop.stop_lon },
+      { latitude: stopInfo.stop_lat, longitude: stopInfo.stop_lon },
       100
     )
-    return { stopId: stop.stop_id, distance: distance }
+    return { stop_id: stopId, distance: distance }
   })
   return _.sortBy(stopDistances, 'distance')
+}
+
+export function loadFavoriteStops() {
+  return function(dispatch) {
+    dispatch({ type: types.FAVORITES.START })
+    const favoriteStops = staticFavorites.map((stopId) => {
+      return getStopInfo(stopId)
+    })
+
+    dispatch({
+        type: types.FAVORITES.SUCCESS,
+        payload: favoriteStops
+    })
+  }
 }

@@ -301,6 +301,132 @@
       "stop_type": "Light Rail"
    },
    {
+      "stop_id": 56026,
+      "stop_name": "Union Depot Station & Platform",
+      "stop_lat": 44.948165,
+      "stop_lon": -93.086889,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56027,
+      "stop_name": "Central Station & Platform",
+      "stop_lat": 44.94607,
+      "stop_lon": -93.092202,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56028,
+      "stop_name": "10th St Station & Platform",
+      "stop_lat": 44.950568,
+      "stop_lon": -93.097372,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56029,
+      "stop_name": "Robert St Station & Platform",
+      "stop_lat": 44.954168,
+      "stop_lon": -93.097548,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56030,
+      "stop_name": "Capitol / Rice St Station & Platform",
+      "stop_lat": 44.955749,
+      "stop_lon": -93.105534,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56031,
+      "stop_name": "Western Ave Station & Platform",
+      "stop_lat": 44.955837,
+      "stop_lon": -93.116366,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56032,
+      "stop_name": "Dale St Station & Platform",
+      "stop_lat": 44.955761,
+      "stop_lon": -93.126602,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56033,
+      "stop_name": "Victoria St Station & Platform",
+      "stop_lat": 44.955774,
+      "stop_lon": -93.13668,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56034,
+      "stop_name": "Lexington Pkwy Station & Platform",
+      "stop_lat": 44.955802,
+      "stop_lon": -93.146863,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56035,
+      "stop_name": "Hamline Ave Station & Platform",
+      "stop_lat": 44.955748,
+      "stop_lon": -93.157049,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56036,
+      "stop_name": "Snelling Ave Station & Platform",
+      "stop_lat": 44.955708,
+      "stop_lon": -93.167232,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56037,
+      "stop_name": "Fairview Ave Station & Platform",
+      "stop_lat": 44.95632,
+      "stop_lon": -93.178405,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56038,
+      "stop_name": "Raymond Ave Station & Platform",
+      "stop_lat": 44.963332,
+      "stop_lon": -93.195861,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56039,
+      "stop_name": "Westgate Station & Platform",
+      "stop_lat": 44.967591,
+      "stop_lon": -93.206566,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56040,
+      "stop_name": "Prospect Park Station & Platform",
+      "stop_lat": 44.971498,
+      "stop_lon": -93.21532,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56041,
+      "stop_name": "Stadium Village Station & Platform",
+      "stop_lat": 44.974907,
+      "stop_lon": -93.223072,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56042,
+      "stop_name": "East Bank Station & Platform",
+      "stop_lat": 44.97366,
+      "stop_lon": -93.231045,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 56043,
+      "stop_name": "West Bank Station & Platform",
+      "stop_lat": 44.972171,
+      "stop_lon": -93.24542,
+      "stop_type": "Light Rail"
+   },
+   {
       "stop_id": 56098,
       "stop_name": "Ramsey Station & Platform",
       "stop_lat": 45.231838,

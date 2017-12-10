@@ -15,7 +15,7 @@ class StopPreview extends Component {
           <div className='stop-title'>{ this.props.stopInfo.stop_name }</div>
           <div className='stop-arrival-chips'>
             { this.props.arrivals.slice(0,4).map((arrival) =>
-              <ArrivalChip key={arrival.BlockNumber} {...arrival} />
+              <ArrivalChip key={`${this.props.stopId}-${arrival.BlockNumber}-${arrival.DepartureTime}`} {...arrival} />
             )}
           </div>
         </Link>

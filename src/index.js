@@ -4,13 +4,13 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import { Route } from 'react-router'
 import store, { history } from './store';
-
-import App from './components/app';
-import List from './containers/list';
-import Map from './containers/map';
-import Favorites from './components/favorites';
-import Stop from './containers/stop';
 import registerServiceWorker from './registerServiceWorker';
+
+import App       from './components/app';
+import List      from './containers/list';
+import Map       from  './containers/map';
+import Favorites from   './containers/favorites';
+import Stop      from './containers/stop';
 
 ReactDOM.render(
   <Provider store={store}>
