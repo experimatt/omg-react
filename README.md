@@ -12,6 +12,16 @@ Bootstrapped with [Create React App](https://github.com/facebookincubator/create
       * i.e. `REACT_APP_GOOGLE_MAPS_API_KEY={KEY_GOES_HERE}`
   5. Run `yarn start` to spin up the app (http://localhost:3000)
 
+## Deploying
+
+This app is currently deployed to a Heroku free tier. It is accessible at http://omgtransit.herokuapp.com/.
+
+To deploy, you'll need to be granted access to Heroku.
+
+Once you have access, add heroku as a remote: `heroku git:remote -a omgtransit`.
+
+To push the latest changes from master to heroku: `git push heroku master`.
+
 ## About this application
 
 ### Stop Data

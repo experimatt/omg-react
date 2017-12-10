@@ -7,26 +7,18 @@ import rootReducer from './reducers'
 export const history = createHistory()
 
 const initialState = {}
-const enhancers = []
-const middleware = [
+
+const middleware = applyMiddleware(
   thunk,
   routerMiddleware(history)
-]
-
-// Redux devtools
-if (process.env.NODE_ENV === 'development') {
-  enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-}
-
-const composedEnhancers = compose(
-  applyMiddleware(...middleware),
-  ...enhancers
 )
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
   initialState,
-  composedEnhancers
+  composeEnhancers(middleware)
 )
 
 export default store
