@@ -9,6 +9,8 @@ class StopPreview extends Component {
   }
 
   render() {
+    // TODO: Implement no data arrival chip
+
     return (
       <div className="stop-preview">
         <Link to={ `/stops/${this.props.stopId}` }>

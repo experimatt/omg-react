@@ -3,7 +3,7 @@ import * as types from './action_types'
 import allStops from '../static/stops_all.json'
 import railStops from '../static/stops_rail.json'
 import _ from 'lodash'
-import { staticNearbyStops, staticFavorites } from '../static/data'
+import { staticFavorites } from '../static/data'
 import geolib from 'geolib'
 
 // helper methods
@@ -26,10 +26,15 @@ export function loadStopArrivals(stopId) {
     dispatch({ type: types.ARRIVALS.START })
     axios.get(url)
     .then((response) => {
-      dispatch({
-        type: types.ARRIVALS.SUCCESS,
-        payload: { stop_id: stopId, data: dedupeArrivals(response.data) }
-      })
+      var arrivals = dedupeArrivals(response.data)
+      if (arrivals.length >0 ) {
+        dispatch({
+          type: types.ARRIVALS.SUCCESS,
+          payload: { stop_id: stopId, data: arrivals}
+        })
+      } else {
+        console.log('no data found for ', stopId);
+      }
     })
     .catch((error) => {
       dispatch({
@@ -78,11 +83,7 @@ export function updateGeolocation() {
 export function loadNearbyStops(coords) {
   return function(dispatch) {
     dispatch({ type: types.NEARBY_STOPS.START })
-    const nearbyStopIds = calculateStopDistances(coords, staticNearbyStops)
-    const nearbyStops = nearbyStopIds.slice(0,9).map((stop) => {
-      return getStopInfo(stop.stop_id)
-    })
-
+    const nearbyStops = calculateNearbyStops(coords, combinedStops()).slice(0,11)
     dispatch({
         type: types.NEARBY_STOPS.SUCCESS,
         payload: nearbyStops
@@ -90,17 +91,32 @@ export function loadNearbyStops(coords) {
   }
 }
 
-function calculateStopDistances(coords, stops) {
-  var stopDistances = stops.map((stopId) => {
-    const stopInfo = getStopInfo(stopId)
+function calculateNearbyStops(coords, stops) {
+  const stopsWithDistance = filterStopsByDistance(coords, stops, 0.01).map((stop) => {
     const distance = geolib.getDistance(
-      _.pick(coords, ['latitude', 'longitude']),
-      { latitude: stopInfo.stop_lat, longitude: stopInfo.stop_lon },
+      { latitude: coords.latitude, longitude: coords.longitude },
+      { latitude: stop.stop_lat, longitude: stop.stop_lon },
       100
     )
-    return { stop_id: stopId, distance: distance }
+    return { stop_id: stop.stop_id, distance: distance }
   })
-  return _.sortBy(stopDistances, 'distance')
+  return _.sortBy(stopsWithDistance, 'distance')
+}
+
+function filterStopsByDistance(coords, stops, distance) {
+  var lat = coords.latitude
+  var lon = coords.longitude
+  var latMin = lat - distance
+  var latMax = lat + distance
+  var lonMin = lon - distance
+  var lonMax = lon + distance
+
+  return stops.filter((stop) =>
+    stop.stop_lat < latMax &&
+    stop.stop_lat > latMin &&
+    stop.stop_lon < lonMax &&
+    stop.stop_lon > lonMin
+  )
 }
 
 export function loadFavoriteStops() {
