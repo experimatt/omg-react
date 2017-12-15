@@ -1,15 +1,36 @@
 {
-  "short_name": "OMG React",
-  "name": "OMG Transit React POC",
+  "short_name": "OMG Transit",
+  "name": "OMG Transit",
+  "description": "A real-time transit app for the Twin Cities",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#686868",
+  "background_color": "#162d3d",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    }, {
+      "src": "images/logo57.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    }, {
+      "src": "images/logo72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }, {
+      "src": "images/logo114.png",
+      "sizes": "114x114",
+      "type": "image/png"
+    }, {
+      "src": "images/logo144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "images/logo200.png",
+      "sizes": "200x200",
+      "type": "image/png"
     }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
