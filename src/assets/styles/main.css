@@ -260,6 +260,9 @@ footer {
   .arrival-bar.p20 {
     background-color: #fff;
     color: #686868; }
+  .arrival-bar.pnd {
+    background-color: black;
+    color: #fff; }
 
 .arrival-info {
   display: inline-block;

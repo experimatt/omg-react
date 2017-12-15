@@ -27,14 +27,10 @@ export function loadStopArrivals(stopId) {
     axios.get(url)
     .then((response) => {
       var arrivals = dedupeArrivals(response.data)
-      if (arrivals.length >0 ) {
-        dispatch({
-          type: types.ARRIVALS.SUCCESS,
-          payload: { stop_id: stopId, data: arrivals}
-        })
-      } else {
-        console.log('no data found for ', stopId);
-      }
+      dispatch({
+        type: types.ARRIVALS.SUCCESS,
+        payload: { stop_id: stopId, data: arrivals}
+      })
     })
     .catch((error) => {
       dispatch({

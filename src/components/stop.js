@@ -13,6 +13,21 @@ class Stop extends Component {
       lat: this.props.stopInfo.stop_lat,
       lng: this.props.stopInfo.stop_lon
     }
+
+    let arrivalContent = 'Loading...'
+    if (this.props.arrivals && this.props.arrivals.length > 0) {
+      arrivalContent = this.props.arrivals.map((arrival) =>
+        <ArrivalBar key={`${this.props.stopId}-${arrival.BlockNumber}-${arrival.DepartureTime}`} {...arrival} />
+      )
+    } else {
+    arrivalContent = (
+      <div className={`arrival-bar pnd`}>
+        <div className='arrival-info'>
+          No Data
+        </div>
+      </div>)
+    }
+
     return (
       <div className="stop main-container">
         <div className='stop-map-preview'>
@@ -27,9 +42,7 @@ class Stop extends Component {
           </div>
         </div>
         <div className='arrivals'>
-        { this.props.arrivals.map((arrival) =>
-          <ArrivalBar key={`${this.props.stopId}-${arrival.BlockNumber}-${arrival.DepartureTime}`} {...arrival} />
-        )}
+          { arrivalContent }
         </div>
       </div>
     );
