@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { googleMapsAPIKey } from '../util/helpers'
-import busIcon from '../assets/images/pin-bus.png'
+import MapStopMarker from './map_stop_marker'
+import crosshair from '../assets/images/crosshair.svg'
 
-const BusIcon = ({ text }) => {
-  return (
-    <div>
-      <img src={busIcon} alt='bus pin' />
-    </div>
-  )
-}
+const MapMarkerCenter = () => (<img id='crosshair' src={crosshair} alt='map center' />)
 
 class Map extends Component {
+  componentDidMount() {
+    console.log('map didMount');
+    this.props.loadNearbyStops(this.props.geolocation.coords);
+  }
+
   createMapOptions(maps) {
     var mapStyles = [{ featureType: "poi", elementType: "labels", stylers: [ { visibility: "off" } ]}];
     return {
@@ -27,9 +27,10 @@ class Map extends Component {
 
   render() {
     const coords = {
-      lat: this.props.coords.latitude,
-      lng: this.props.coords.longitude
+      lat: this.props.geolocation.coords.latitude,
+      lng: this.props.geolocation.coords.longitude
     }
+    console.log(this.props);
 
     return (
       <div className='map-container'>
@@ -39,10 +40,12 @@ class Map extends Component {
           zoom= { 16 }
           options={this.createMapOptions}
         >
-          <BusIcon
-            lat={coords.lat}
-            lng={coords.lng}
-          />
+          <MapMarkerCenter lat={coords.lat} lng={coords.lng} />
+
+          { this.props.nearbyStops.map((stop) =>
+            <MapStopMarker key={`map-stop-${stop.stop_id}`} lat={stop.stop_lat} lng={stop.stop_lon} {...stop} />
+          )}
+
         </GoogleMapReact>
       </div>
     )

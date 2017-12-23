@@ -169,9 +169,16 @@
    },
    {
       "stop_id": 55998,
-      "stop_name": "Downtown East Station & Platform",
+      "stop_name": "US Bank Stadium Station",
       "stop_lat": 44.974951,
       "stop_lon": -93.259752,
+      "stop_type": "Light Rail"
+   },
+   {
+      "stop_id": 55999,
+      "stop_name": "US Bank Stadium Station",
+      "stop_lat": 44.975032,
+      "stop_lon": -93.259950,
       "stop_type": "Light Rail"
    },
    {

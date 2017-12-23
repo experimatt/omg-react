@@ -12,7 +12,8 @@ function dedupeArrivals(arrivals) {
 }
 
 function combinedStops() {
-  return _.merge(allStops, railStops)
+  // TODO: This isn't actually de-duping based on stop_id. Fix it
+  return _.merge([], allStops, railStops)
 }
 
 function getStopInfo(stopId) {
@@ -92,9 +93,9 @@ function calculateNearbyStops(coords, stops) {
     const distance = geolib.getDistance(
       { latitude: coords.latitude, longitude: coords.longitude },
       { latitude: stop.stop_lat, longitude: stop.stop_lon },
-      100
+      10
     )
-    return { stop_id: stop.stop_id, distance: distance }
+    return { distance: distance, ...stop }
   })
   return _.sortBy(stopsWithDistance, 'distance')
 }

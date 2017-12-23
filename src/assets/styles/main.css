@@ -152,6 +152,15 @@ footer {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300; }
 
+#crosshair {
+  height: 19px;
+  width: 19px;
+  opacity: 0.6; }
+
+.map-pin {
+  height: 39px;
+  width: 24px; }
+
 .header-logo {
   width: 121px;
   height: 30px;
