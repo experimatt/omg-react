@@ -155,11 +155,17 @@ footer {
 #crosshair {
   height: 19px;
   width: 19px;
-  opacity: 0.6; }
+  opacity: 0.6;
+  position: absolute;
+  top: -9px;
+  left: -9px; }
 
 .map-pin {
   height: 39px;
-  width: 24px; }
+  width: 24px;
+  position: absolute;
+  top: -39px;
+  left: -24px; }
 
 .header-logo {
   width: 121px;

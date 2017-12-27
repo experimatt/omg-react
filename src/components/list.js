@@ -3,7 +3,7 @@ import StopPreview from '../containers/stop_preview'
 
 class List extends Component {
   componentDidMount() {
-    this.props.loadNearbyStops(this.props.geolocation.coords);
+    this.props.loadNearbyStops(this.props.nearbyStopCoords);
   }
 
   render() {

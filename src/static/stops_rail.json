@@ -112,6 +112,13 @@
       "stop_type": "Light Rail"
    },
    {
+      "stop_id": 51424,
+      "stop_name": "Government Plaza Station & Platform",
+      "stop_lat": 44.976854,
+      "stop_lon": -93.265927,
+      "stop_type": "Light Rail"
+   },
+   {
       "stop_id": 53279,
       "stop_name": "American Blvd 34th Ave Station & Platform",
       "stop_lat": 44.858305,

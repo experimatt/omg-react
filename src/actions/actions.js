@@ -8,12 +8,14 @@ import geolib from 'geolib'
 
 // helper methods
 function dedupeArrivals(arrivals) {
-  return _.reverse(_.uniqBy(_.reverse(arrivals), function(a) { return [a.BlockNumber, a.DepartureTime].join('-'); }))
+  return _.reverse(_.uniqBy(_.reverse(arrivals), (a) => [a.BlockNumber, a.DepartureTime].join('-')))
 }
 
 function combinedStops() {
-  // TODO: This isn't actually de-duping based on stop_id. Fix it
-  return _.merge([], allStops, railStops)
+  // const allStopsHash = _.keyBy(allStops, 'stop_id')
+  // const railStopsHash = _.keyBy(railStops, 'stop_id')
+  // return _.toArray({...allStopsHash, ...railStopsHash})
+  return allStops
 }
 
 function getStopInfo(stopId) {
@@ -126,6 +128,16 @@ export function loadFavoriteStops() {
     dispatch({
         type: types.FAVORITES.SUCCESS,
         payload: favoriteStops
+    })
+  }
+}
+
+export function updateMapCenter(coords) {
+  return function(dispatch) {
+    dispatch({ type: types.MAP_CENTER.START })
+    dispatch({
+        type: types.MAP_CENTER.SUCCESS,
+        payload: coords
     })
   }
 }

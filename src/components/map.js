@@ -3,12 +3,12 @@ import GoogleMapReact from 'google-map-react';
 import { googleMapsAPIKey } from '../util/helpers'
 import MapStopMarker from './map_stop_marker'
 import crosshair from '../assets/images/crosshair.svg'
+import _isEqual from 'lodash/isEqual'
 
 const MapMarkerCenter = () => (<img id='crosshair' src={crosshair} alt='map center' />)
 
 class Map extends Component {
   componentDidMount() {
-    console.log('map didMount');
     this.props.loadNearbyStops(this.props.geolocation.coords);
   }
 
@@ -26,11 +26,7 @@ class Map extends Component {
   }
 
   render() {
-    const coords = {
-      lat: this.props.geolocation.coords.latitude,
-      lng: this.props.geolocation.coords.longitude
-    }
-    console.log(this.props);
+    const coords = this.shortLatLng(this.props.mapCenter)
 
     return (
       <div className='map-container'>
@@ -39,8 +35,9 @@ class Map extends Component {
           center={ coords }
           zoom= { 16 }
           options={this.createMapOptions}
+          onChange={this.onMapChange}
         >
-          <MapMarkerCenter lat={coords.lat} lng={coords.lng} />
+          <MapMarkerCenter {...coords} />
 
           { this.props.nearbyStops.map((stop) =>
             <MapStopMarker key={`map-stop-${stop.stop_id}`} lat={stop.stop_lat} lng={stop.stop_lon} {...stop} />
@@ -49,6 +46,22 @@ class Map extends Component {
         </GoogleMapReact>
       </div>
     )
+  }
+
+  shortLatLng(coords) {
+    return { lat: coords.latitude, lng: coords.longitude }
+  }
+
+  fullLatLng(coords) {
+    return { latitude: coords.lat, longitude: coords.lng }
+  }
+
+  onMapChange = (params) => {
+    let coords = this.fullLatLng(params.center)
+    if (!_isEqual(coords, this.props.mapCenter)) {
+      this.props.updateMapCenter(coords)
+      this.props.loadNearbyStops(coords)
+    }
   }
 }
 

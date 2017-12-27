@@ -1,18 +1,19 @@
 import { connect } from 'react-redux'
 import MapComponent from '../components/map'
-import { loadNearbyStops } from '../actions/actions'
+import { loadNearbyStops, updateMapCenter } from '../actions/actions'
+import _isEmpty from 'lodash/isEmpty'
 
 const mapStateToProps = (state) => {
   return {
     geolocation: state.geolocation,
-    nearbyStops: state.nearbyStops
-    // TODO: keep track of when user pans around the map
-    // mapCoords: state.mapCoords || {}
+    nearbyStops: state.nearbyStops,
+    mapCenter: _isEmpty(state.mapCenter) ? state.geolocation.coords : state.mapCenter
   }
 }
 
 const mapDispatchToProps = {
-  loadNearbyStops
+  loadNearbyStops,
+  updateMapCenter
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MapComponent);
