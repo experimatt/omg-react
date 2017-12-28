@@ -79,7 +79,7 @@ export function updateGeolocation() {
 export function loadNearbyStops(coords) {
   return function(dispatch) {
     dispatch({ type: types.NEARBY_STOPS.START })
-    const nearbyStops = calculateNearbyStops(coords, combinedStops()).slice(0,11)
+    const nearbyStops = calculateNearbyStops(coords, combinedStops()).slice(0, 20)
     dispatch({
         type: types.NEARBY_STOPS.SUCCESS,
         payload: nearbyStops

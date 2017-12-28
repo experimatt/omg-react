@@ -14,24 +14,22 @@ class StopPreview extends Component {
    // 3) Nothing (when no arrivals)
 
   render() {
-    let arrivalContent = 'Loading...'
-
     if (this.props.arrivals && this.props.arrivals.length > 0) {
-      arrivalContent = this.props.arrivals.slice(0,4).map((arrival) =>
-        <ArrivalChip key={`${this.props.stopId}-${arrival.BlockNumber}-${arrival.DepartureTime}`} {...arrival} />
+      return (
+        <div className="stop-preview">
+          <Link to={ `/stops/${this.props.stopId}` }>
+            <div className='stop-title'>{ this.props.stopInfo.stop_name }</div>
+            <div className='stop-arrival-chips'>
+              { this.props.arrivals.slice(0,4).map((arrival) =>
+                <ArrivalChip key={`${this.props.stopId}-${arrival.BlockNumber}-${arrival.DepartureTime}`} {...arrival} />
+              )}
+            </div>
+          </Link>
+        </div>
       )
     } else {
-    arrivalContent = <span className={`arrival-chip pnd`}>No Data</span>
+    return null
     }
-
-    return (
-      <div className="stop-preview">
-        <Link to={ `/stops/${this.props.stopId}` }>
-          <div className='stop-title'>{ this.props.stopInfo.stop_name }</div>
-          <div className='stop-arrival-chips'>{ arrivalContent }</div>
-        </Link>
-      </div>
-    );
   }
 }
 

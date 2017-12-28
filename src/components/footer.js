@@ -18,6 +18,10 @@ const Footer = () => {
           <i className="fa fa-star"></i>
           <span className="text">Favorites</span>
         </NavLink>
+        <NavLink to="/more">
+          <i className="fa fa-ellipsis-h"></i>
+          <span className="text">More</span>
+        </NavLink>
       </div>
     </footer>
   )

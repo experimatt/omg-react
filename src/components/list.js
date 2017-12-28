@@ -9,7 +9,7 @@ class List extends Component {
   render() {
     return (
       <div className='list main-container'>
-        { this.props.nearbyStops.map((stop) =>
+        { this.props.nearbyStops.slice(0,15).map((stop) =>
           <StopPreview key={`list-stop-${stop.stop_id}`} {...stop} />
         )}
       </div>

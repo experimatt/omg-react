@@ -59,6 +59,7 @@ class Map extends Component {
   }
 
   onMapChange = (params) => {
+
     let coords = this.fullLatLng(params.center)
     if (!_isEqual(coords, this.props.mapCenter)) {
       this.props.updateMapCenter(coords)

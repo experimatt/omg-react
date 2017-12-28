@@ -90,6 +90,7 @@ footer {
   height: 60px;
   background-color: #162d3d;
   position: fixed;
+  overflow: hidden;
   bottom: 0;
   width: 100%;
   text-align: center; }
@@ -153,32 +154,54 @@ footer {
   font-weight: 300; }
 
 #crosshair {
+  position: absolute;
   height: 18px;
   width: 18px;
-  opacity: 0.6;
-  position: absolute;
   top: -9px;
-  left: -9px; }
+  left: -9px;
+  transform-origin: -9px -9px;
+  margin: 0;
+  padding: 0;
+  opacity: 0.6;
+  user-select: none; }
 
 #you-are-here {
-  background-color: royalblue;
-  border: 2px solid white;
+  position: absolute;
   height: 18px;
   width: 18px;
+  top: -11px;
+  left: -11px;
+  transform-origin: -11px -11px;
+  margin: 0;
+  padding: 0;
+  background-color: royalblue;
+  border: 2px solid white;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   box-shadow: 0 0 0 5px rgba(65, 105, 225, 0.3);
-  position: absolute;
-  top: -11px;
-  left: -11px; }
+  user-select: none; }
 
 .map-pin {
-  height: 39px;
-  width: 24px;
   position: absolute;
-  top: -39px;
-  left: -12px; }
+  cursor: pointer;
+  height: 36.5px;
+  width: 24px;
+  background-size: 24px auto;
+  background-repeat: no-repeat;
+  background-origin: 12px 36.5px;
+  top: -36.5px;
+  left: -12px;
+  margin: 0;
+  padding: 0; }
+  .map-pin.bus {
+    background-image: url("../images/pin-bus.png"); }
+    .map-pin.bus:hover {
+      background-image: url("../images/pin-bus-hover.png"); }
+  .map-pin.train {
+    background-image: url("../images/pin-train.png"); }
+    .map-pin.train:hover {
+      background-image: url("../images/pin-train-hover.png"); }
 
 .header-logo {
   width: 121px;
