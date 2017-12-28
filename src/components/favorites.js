@@ -22,6 +22,7 @@ class Favorites extends Component {
             Favorites
           </div>
         </div>
+        (This is a static list for now)<br />
         { contents }
       </div>
     )

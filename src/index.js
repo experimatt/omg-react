@@ -10,6 +10,7 @@ import App       from './components/app';
 import List      from './containers/list';
 import Map       from  './containers/map';
 import Favorites from   './containers/favorites';
+import More      from './components/more';
 import Stop      from './containers/stop';
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Route path="/list" component={List}/>
           <Route path="/map" component={Map} />
           <Route path="/favorites" component={Favorites} />
+          <Route path="/more" component={More} />
           <Route path="/stops/:id" component={Stop}/>
         </App>
       </ConnectedRouter>

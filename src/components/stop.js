@@ -9,11 +9,6 @@ class Stop extends Component {
   }
 
   render() {
-    let coords = {
-      lat: this.props.stopInfo.stop_lat,
-      lng: this.props.stopInfo.stop_lon
-    }
-
     let arrivalContent = 'Loading...'
     if (this.props.arrivals && this.props.arrivals.length > 0) {
       arrivalContent = this.props.arrivals.map((arrival) =>
@@ -31,7 +26,7 @@ class Stop extends Component {
     return (
       <div className="stop main-container">
         <div className='stop-map-preview'>
-          <MapPreview coords={coords} />
+          <MapPreview {...this.props.stopInfo} />
         </div>
         <div className='heading-bar'>
           <div className='stop-heading'>

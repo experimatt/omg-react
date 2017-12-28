@@ -6,7 +6,7 @@ import crosshair from '../assets/images/crosshair.svg'
 import _isEqual from 'lodash/isEqual'
 
 const YouAreHereMarker = () => (<div id='you-are-here'></div>)
-const MapMarkerCenter = () => (<img id='crosshair' src={crosshair} alt='map center' />)
+const MapCenterMarker = () => (<img id='crosshair' src={crosshair} alt='map center' />)
 
 class Map extends Component {
   componentDidMount() {
@@ -39,12 +39,10 @@ class Map extends Component {
           onChange={this.onMapChange}
         >
           <YouAreHereMarker {...this.shortLatLng(this.props.geolocation.coords)} />
-          <MapMarkerCenter {...coords} />
-
+          <MapCenterMarker {...coords} />
           { this.props.nearbyStops.map((stop) =>
             <MapStopMarker key={`map-stop-${stop.stop_id}`} lat={stop.stop_lat} lng={stop.stop_lon} {...stop} />
           )}
-
         </GoogleMapReact>
       </div>
     )
@@ -59,7 +57,6 @@ class Map extends Component {
   }
 
   onMapChange = (params) => {
-
     let coords = this.fullLatLng(params.center)
     if (!_isEqual(coords, this.props.mapCenter)) {
       this.props.updateMapCenter(coords)

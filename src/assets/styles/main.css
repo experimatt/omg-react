@@ -148,7 +148,7 @@ footer {
 
 .map-container {
   width: 100%;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 110px);
   margin: 0 auto;
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300; }
@@ -169,22 +169,21 @@ footer {
   position: absolute;
   height: 18px;
   width: 18px;
-  top: -11px;
-  left: -11px;
-  transform-origin: -11px -11px;
+  top: -10px;
+  left: -10px;
+  transform-origin: -10px -10px;
   margin: 0;
   padding: 0;
   background-color: royalblue;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  box-shadow: 0 0 0 5px rgba(65, 105, 225, 0.3);
+  box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.3);
   user-select: none; }
 
 .map-pin {
   position: absolute;
-  cursor: pointer;
   height: 36.5px;
   width: 24px;
   background-size: 24px auto;
@@ -194,13 +193,15 @@ footer {
   left: -12px;
   margin: 0;
   padding: 0; }
+  .map-pin:not(.disabled) {
+    cursor: pointer; }
   .map-pin.bus {
     background-image: url("../images/pin-bus.png"); }
-    .map-pin.bus:hover {
+    .map-pin.bus:hover :not(.disabled) {
       background-image: url("../images/pin-bus-hover.png"); }
   .map-pin.train {
     background-image: url("../images/pin-train.png"); }
-    .map-pin.train:hover {
+    .map-pin.train:hover :not(.disabled) {
       background-image: url("../images/pin-train-hover.png"); }
 
 .header-logo {

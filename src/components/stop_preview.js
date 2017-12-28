@@ -8,11 +8,6 @@ class StopPreview extends Component {
     this.props.loadStopInfo(this.props.stopId)
   }
 
-  // 3 states to render:
-   // 1) Stop title & loading
-   // 2) Stop title & arrival chips (when arrival present)
-   // 3) Nothing (when no arrivals)
-
   render() {
     if (this.props.arrivals && this.props.arrivals.length > 0) {
       return (
