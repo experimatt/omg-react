@@ -38,3 +38,28 @@
       * Source: https://gisdata.mn.gov/dataset/us-mn-state-metc-trans-transit-schedule-google-fd
     * Source 2:
       * https://transitfeeds.com/p/metro-transit/179
+
+
+manifest.json icons (removed)
+
+, {
+  "src": "images/logo57.png",
+  "sizes": "57x57",
+  "type": "image/png"
+}, {
+  "src": "images/logo72.png",
+  "sizes": "72x72",
+  "type": "image/png"
+}, {
+  "src": "images/logo114.png",
+  "sizes": "114x114",
+  "type": "image/png"
+}, {
+  "src": "images/logo144.png",
+  "sizes": "144x144",
+  "type": "image/png"
+}, {
+  "src": "images/logo200.png",
+  "sizes": "200x200",
+  "type": "image/png"
+},
