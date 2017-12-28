@@ -5,6 +5,7 @@ import MapStopMarker from './map_stop_marker'
 import crosshair from '../assets/images/crosshair.svg'
 import _isEqual from 'lodash/isEqual'
 
+const YouAreHereMarker = () => (<div id='you-are-here'></div>)
 const MapMarkerCenter = () => (<img id='crosshair' src={crosshair} alt='map center' />)
 
 class Map extends Component {
@@ -37,6 +38,7 @@ class Map extends Component {
           options={this.createMapOptions}
           onChange={this.onMapChange}
         >
+          <YouAreHereMarker {...this.shortLatLng(this.props.geolocation.coords)} />
           <MapMarkerCenter {...coords} />
 
           { this.props.nearbyStops.map((stop) =>

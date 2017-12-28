@@ -153,19 +153,32 @@ footer {
   font-weight: 300; }
 
 #crosshair {
-  height: 19px;
-  width: 19px;
+  height: 18px;
+  width: 18px;
   opacity: 0.6;
   position: absolute;
   top: -9px;
   left: -9px; }
+
+#you-are-here {
+  background-color: royalblue;
+  border: 2px solid white;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(65, 105, 225, 0.3);
+  position: absolute;
+  top: -11px;
+  left: -11px; }
 
 .map-pin {
   height: 39px;
   width: 24px;
   position: absolute;
   top: -39px;
-  left: -24px; }
+  left: -12px; }
 
 .header-logo {
   width: 121px;
