@@ -1,7 +1,7 @@
 import axios from 'axios'
 import * as types from './action_types'
 import allStops from '../static/stops_all.json'
-import railStops from '../static/stops_rail.json'
+// import railStops from '../static/stops_rail.json'
 import _ from 'lodash'
 import { staticFavorites } from '../static/data'
 import geolib from 'geolib'
@@ -12,14 +12,11 @@ function dedupeArrivals(arrivals) {
 }
 
 function combinedStops() {
-  // const allStopsHash = _.keyBy(allStops, 'stop_id')
-  // const railStopsHash = _.keyBy(railStops, 'stop_id')
-  // return _.toArray({...allStopsHash, ...railStopsHash})
   return allStops
 }
 
 function getStopInfo(stopId) {
-  return _.find(combinedStops(), {'stop_id': parseInt(stopId,10)} )
+  return _.find(combinedStops(), {'stop_id': parseInt(stopId,10)})
 }
 
 // actions
