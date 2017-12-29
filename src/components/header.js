@@ -5,12 +5,12 @@ import chevronLeft from '../assets/images/chevron-small-left.png';
 
 class Header extends Component {
   componentDidMount() {
-    this.props.updateGeolocation()
+    this.props.updateUserLocation()
   }
 
   handleClick = (e) => {
     e.preventDefault();
-    this.props.updateGeolocation();
+    this.props.updateUserLocation();
   }
 
   render() {

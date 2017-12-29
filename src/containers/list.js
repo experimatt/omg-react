@@ -5,9 +5,9 @@ import _isEmpty from 'lodash/isEmpty'
 
 const mapStateToProps = (state) => {
   return {
-    geolocation: state.geolocation,
+    userLocation: state.userLocation,
     nearbyStops: state.nearbyStops,
-    nearbyStopCoords: _isEmpty(state.mapCenter) ? state.geolocation.coords : state.mapCenter
+    nearbyStopCoords: _isEmpty(state.mapCenter) ? state.userLocation.coords : state.mapCenter
   }
 }
 

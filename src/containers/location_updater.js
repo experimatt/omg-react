@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import LocationUpdaterComponent from '../components/location_updater'
-import { updateGeolocation } from '../actions/actions'
+import { updateUserLocation } from '../actions/actions'
 
 const mapStateToProps = (state) => {
-  return { geolocation: state.geolocation } 
+  return { userLocation: state.userLocation } 
 }
 
 const mapDispatchToProps = {
-  updateGeolocation
+  updateUserLocation
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LocationUpdaterComponent);

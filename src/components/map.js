@@ -10,7 +10,7 @@ const MapCenterMarker = () => (<img id='crosshair' src={crosshair} alt='map cent
 
 class Map extends Component {
   componentDidMount() {
-    this.props.loadNearbyStops(this.props.geolocation.coords);
+    this.props.loadNearbyStops(this.props.userLocation.coords);
   }
 
   createMapOptions(maps) {
@@ -39,7 +39,7 @@ class Map extends Component {
           onChange={this.onMapChange}
           disabled={false}
         >
-          <YouAreHereMarker {...this.shortLatLng(this.props.geolocation.coords)} />
+          <YouAreHereMarker {...this.shortLatLng(this.props.userLocation.coords)} />
           <MapCenterMarker {...coords} />
           { this.props.nearbyStops.map((stop) =>
             <MapStopMarker key={`map-stop-${stop.stop_id}`} lat={stop.stop_lat} lng={stop.stop_lon} {...stop} />

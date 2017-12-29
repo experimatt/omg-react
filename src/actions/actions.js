@@ -59,17 +59,17 @@ export function loadStopInfo(stopId) {
   }
 }
 
-export function updateGeolocation() {
+export function updateUserLocation() {
   return function(dispatch) {
-    dispatch({ type: types.GEOLOCATION.START })
+    dispatch({ type: types.USER_LOCATION.START })
     navigator.geolocation.getCurrentPosition((position) => {
       dispatch({
-          type: types.GEOLOCATION.SUCCESS,
+          type: types.USER_LOCATION.SUCCESS,
           payload: position
       })
     },(error) => {
       dispatch({
-          type: types.GEOLOCATION.FAILURE,
+          type: types.USER_LOCATION.FAILURE,
           payload: error
       })
     })
