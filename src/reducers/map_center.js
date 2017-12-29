@@ -1,6 +1,8 @@
 import { MAP_CENTER, USER_LOCATION} from '../actions/action_types'
 
-export const mapCenter = (state = {}, action) => {
+const initialState = { latitude: 44.975918, longitude: -93.273079 }
+
+export const mapCenter = (state = initialState, action) => {
   switch (action.type) {
     case MAP_CENTER.SUCCESS:
       return action.payload

@@ -1,18 +1,11 @@
 import { USER_LOCATION } from '../actions/action_types'
 
-const initialState = {
-  isLoading: true,
-  coords: { latitude: 44.975918, longitude: -93.273079 }
-}
- 
+const initialState = { coords: {} }
+
 export const userLocation = (state = initialState, action) => {
   switch (action.type) {
     case USER_LOCATION.SUCCESS:
-      return {
-        isLoading: false,
-        coords: action.payload.coords,
-        timestamp: action.payload.timestamp
-      }
+      return action.payload
     default:
       return state
   }

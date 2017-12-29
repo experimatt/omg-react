@@ -91,13 +91,16 @@ footer {
   font-weight: 300;
 }
 
-#crosshair {
+#map-center {
+  background-image: url('../images/crosshair.svg');
   position: absolute;
   height: 18px;
   width: 18px;
+  background-size: 18px auto;
+  background-repeat: no-repeat;
+  background-origin: -9px -9px;
   top: -9px;
   left: -9px;
-  transform-origin: -9px -9px;
   margin: 0;
   padding: 0;
   opacity: 0.6;

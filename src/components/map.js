@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { googleMapsAPIKey } from '../util/helpers'
 import MapStopMarker from './map_stop_marker'
-import crosshair from '../assets/images/crosshair.svg'
 import _isEqual from 'lodash/isEqual'
 
 const YouAreHereMarker = () => (<div id='you-are-here'></div>)
-const MapCenterMarker = () => (<img id='crosshair' src={crosshair} alt='map center' />)
+const MapCenterMarker = () => (<div id='map-center'></div>)
 
 class Map extends Component {
   componentDidMount() {
-    this.props.loadNearbyStops(this.props.userLocation.coords);
+    this.props.loadNearbyStops(this.props.mapCenter);
   }
 
   createMapOptions(maps) {
