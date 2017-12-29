@@ -197,11 +197,11 @@ footer {
     cursor: pointer; }
   .map-pin.bus {
     background-image: url("../images/pin-bus.png"); }
-    .map-pin.bus:hover :not(.disabled) {
+    .map-pin.bus:hover:not(.disabled) {
       background-image: url("../images/pin-bus-hover.png"); }
   .map-pin.train {
     background-image: url("../images/pin-train.png"); }
-    .map-pin.train:hover :not(.disabled) {
+    .map-pin.train:hover:not(.disabled) {
       background-image: url("../images/pin-train-hover.png"); }
 
 .header-logo {
@@ -214,6 +214,12 @@ footer {
   padding-top: 10px;
   color: white;
   float: left; }
+
+.location-arrow {
+  padding-right: 10px;
+  padding-top: 10px;
+  color: white;
+  float: right; }
 
 .stop-map-preview {
   width: 100%;

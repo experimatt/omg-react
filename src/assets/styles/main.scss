@@ -133,15 +133,14 @@ footer {
   left: -12px;
   margin: 0;
   padding: 0;
-
   &:not(.disabled) { cursor: pointer; }
 
    &.bus { background-image: url('../images/pin-bus.png');
-    &:hover :not(.disabled) { background-image: url('../images/pin-bus-hover.png'); }
+    &:hover:not(.disabled) { background-image: url('../images/pin-bus-hover.png'); }
   }
 
   &.train { background-image: url('../images/pin-train.png');
-    &:hover :not(.disabled) { background-image: url('../images/pin-train-hover.png'); }
+    &:hover:not(.disabled) { background-image: url('../images/pin-train-hover.png'); }
   }
 }
 
@@ -156,6 +155,13 @@ footer {
   padding-top: 10px;
   color: white;
   float: left;
+}
+
+.location-arrow {
+  padding-right: 10px;
+  padding-top: 10px;
+  color: white;
+  float: right;
 }
 
 .stop-map-preview {

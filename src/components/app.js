@@ -1,6 +1,6 @@
 import React from 'react';
 import LocationUpdater from '../containers/location_updater'
-import Header from './header'
+import Header from '../containers/header'
 import Footer from './footer'
 import '../assets/styles/main.css';
 

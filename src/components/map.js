@@ -37,6 +37,7 @@ class Map extends Component {
           zoom= { 16 }
           options={this.createMapOptions}
           onChange={this.onMapChange}
+          disabled={false}
         >
           <YouAreHereMarker {...this.shortLatLng(this.props.geolocation.coords)} />
           <MapCenterMarker {...coords} />
