@@ -13,13 +13,12 @@ class Map extends Component {
   }
 
   createMapOptions(maps) {
-    var mapStyles = [{ featureType: "poi", elementType: "labels", stylers: [ { visibility: "off" } ]}];
     return {
       fullscreenControl:  false,
       mapTypeControl:     false,
       panControl:         false,
       streetViewControl:  false,
-      styles:             mapStyles,
+      styles:             [{ featureType: "poi", elementType: "labels", stylers: [ { visibility: "off" } ]}],
       zoomControl:        true,
       zoomControlOptions: { position: maps.ControlPosition.LEFT_CENTER }
     }

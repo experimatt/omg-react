@@ -252,6 +252,11 @@ footer {
 
 .favorite {
   padding: 10px; }
+  .favorite a {
+    text-decoration: none;
+    color: #686868; }
+    .favorite a.selected {
+      color: #f2ae43; }
 
 .bottom-border {
   border-bottom: 1px solid #efefef; }

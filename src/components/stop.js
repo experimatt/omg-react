@@ -8,6 +8,11 @@ class Stop extends Component {
     this.props.loadStopArrivals(this.props.stopId)
   }
 
+  handleFavoriteClick = (e) => {
+    e.preventDefault();
+    this.props.updateFavoriteStops(this.props.stopId);
+  }
+
   render() {
     let arrivalContent = 'Loading...'
     if (this.props.arrivals && this.props.arrivals.length > 0) {
@@ -23,6 +28,8 @@ class Stop extends Component {
       </div>)
     }
 
+    const selected = this.props.favorite && 'selected'
+
     return (
       <div className="stop main-container">
         <div className='stop-map-preview'>
@@ -33,7 +40,9 @@ class Stop extends Component {
             { this.props.stopInfo.stop_name }
           </div>
           <div className='favorite'>
-            <i className="fa fa-star fa-lg"></i>
+            <a href='' className={`${selected}`} onClick={this.updateFavoriteStops}>
+              <i className='fa fa-star fa-lg'></i>
+            </a>
           </div>
         </div>
         <div className='arrivals'>

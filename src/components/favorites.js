@@ -1,32 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import StopPreview from '../containers/stop_preview'
+import { staticFavorites } from '../static/data'
+import _isEmpty from 'lodash/isEmpty'
 
-class Favorites extends Component {
-  componentDidMount() {
-    this.props.loadFavoriteStops();
+const Favorites = (props) => {
+  let favoriteStops, contents
+
+  if (_isEmpty(props.favorites)) {
+    contents = "You don't have any favorites yet! Showing Matt's favorites instead..."
+    favoriteStops = staticFavorites
+  } else {
+    favoriteStops = props.favorites
   }
 
-  render() {
-    let contents = "You don't have any favorites yet!"
-
-    if (this.props.favorites) {
-      contents = this.props.favorites.map((stop) =>
-        <StopPreview key={stop.stop_id} {...stop} />
-      )
-    }
-
-    return (
-      <div className='favorites main-container'>
-        <div className='heading-bar'>
-          <div className='heading bottom-border'>
-            Favorites
-          </div>
+  return (
+    <div className='favorites main-container'>
+      <div className='heading-bar'>
+        <div className='heading bottom-border'>
+          Favorites
         </div>
-        (This is a static list for now)<br />
-        { contents }
       </div>
-    )
-  }
+      { contents }
+      { favoriteStops.map((stopId) =>
+        <StopPreview key={stopId} stop_id={stopId} />
+      )}
+    </div>
+  )
 }
 
 export default Favorites

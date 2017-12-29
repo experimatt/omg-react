@@ -1,9 +1,7 @@
 import axios from 'axios'
 import * as types from './action_types'
 import allStops from '../static/stops_all.json'
-// import railStops from '../static/stops_rail.json'
 import _ from 'lodash'
-import { staticFavorites } from '../static/data'
 import geolib from 'geolib'
 
 // helper methods
@@ -11,12 +9,8 @@ function dedupeArrivals(arrivals) {
   return _.reverse(_.uniqBy(_.reverse(arrivals), (a) => [a.BlockNumber, a.DepartureTime].join('-')))
 }
 
-function combinedStops() {
-  return allStops
-}
-
 function getStopInfo(stopId) {
-  return _.find(combinedStops(), {'stop_id': parseInt(stopId,10)})
+  return _.find(allStops, {'stop_id': parseInt(stopId,10)})
 }
 
 // actions
@@ -79,7 +73,7 @@ export function updateUserLocation() {
 export function loadNearbyStops(coords) {
   return function(dispatch) {
     dispatch({ type: types.NEARBY_STOPS.START })
-    const nearbyStops = calculateNearbyStops(coords, combinedStops()).slice(0, 20)
+    const nearbyStops = calculateNearbyStops(coords, allStops).slice(0, 20)
     dispatch({
         type: types.NEARBY_STOPS.SUCCESS,
         payload: nearbyStops
@@ -115,26 +109,22 @@ function filterStopsByDistance(coords, stops, distance) {
   )
 }
 
-export function loadFavoriteStops() {
-  return function(dispatch) {
-    dispatch({ type: types.FAVORITES.START })
-    const favoriteStops = staticFavorites.map((stopId) => {
-      return getStopInfo(stopId)
-    })
-
-    dispatch({
-        type: types.FAVORITES.SUCCESS,
-        payload: favoriteStops
-    })
-  }
-}
-
 export function updateMapCenter(coords) {
   return function(dispatch) {
     dispatch({ type: types.MAP_CENTER.START })
     dispatch({
         type: types.MAP_CENTER.SUCCESS,
         payload: coords
+    })
+  }
+}
+
+export function updateFavoriteStops(stopId) {
+  return function(dispatch) {
+    dispatch({ type: types.FAVORITES.START })
+    dispatch({
+        type: types.FAVORITES.SUCCESS,
+        payload: stopId
     })
   }
 }

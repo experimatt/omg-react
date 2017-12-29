@@ -200,6 +200,15 @@ footer {
 
 .favorite {
   padding: 10px;
+
+  a {
+    text-decoration: none;
+    color: $dark_grey;
+
+    &.selected {
+      color: $yellow_star;
+    }
+  }
 }
 
 .bottom-border {

@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import FavoritesComponent from '../components/favorites'
-import { loadFavoriteStops } from '../actions/actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -8,8 +7,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = {
-  loadFavoriteStops
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(FavoritesComponent);
+export default connect(mapStateToProps, {})(FavoritesComponent);
