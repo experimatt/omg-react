@@ -27,8 +27,7 @@ const store = createStore(
 // persist state to local storage
 store.subscribe(_throttle(() => {
   saveState({
-    // TODO: This isn't working correctly yet. fix it
-    // userLocation: store.getState().userLocation,
+    userLocation: store.getState().userLocation,
     favorites: store.getState().favorites
   })
 }, 1000))

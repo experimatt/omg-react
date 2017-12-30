@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
   return {
     userLocation: state.userLocation,
     nearbyStops: state.nearbyStops,
-    mapCenter: _isEmpty(state.mapCenter) ? state.userLocation.coords : state.mapCenter
+    mapCenter: _isEmpty(state.userLocation.coords) ? state.mapCenter : state.userLocation.coords
   }
 }
 
