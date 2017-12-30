@@ -4,9 +4,9 @@ import headerLogo from '../assets/images/omg-header-words.svg';
 import chevronLeft from '../assets/images/chevron-small-left.png';
 
 class Header extends Component {
-  componentDidMount() {
-    this.props.updateUserLocation()
-  }
+  // componentDidMount() {
+  //   this.props.updateUserLocation()
+  // }
 
   handleClick = (e) => {
     e.preventDefault();

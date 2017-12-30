@@ -61,6 +61,10 @@ export function updateUserLocation() {
           type: types.USER_LOCATION.SUCCESS,
           payload: position
       })
+      dispatch({
+          type: types.MAP_CENTER.SUCCESS,
+          payload: {}
+      })
     },(error) => {
       dispatch({
           type: types.USER_LOCATION.FAILURE,

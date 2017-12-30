@@ -28,7 +28,9 @@ class Stop extends Component {
       </div>)
     }
 
+    console.log(this.props.favorite);
     const selected = this.props.favorite && 'selected'
+    console.log(selected);
 
     return (
       <div className="stop main-container">
@@ -40,7 +42,7 @@ class Stop extends Component {
             { this.props.stopInfo.stop_name }
           </div>
           <div className='favorite'>
-            <a href='' className={`${selected}`} onClick={this.updateFavoriteStops}>
+            <a href='' className={`${selected}`} onClick={this.handleFavoriteClick}>
               <i className='fa fa-star fa-lg'></i>
             </a>
           </div>

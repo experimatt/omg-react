@@ -4,7 +4,7 @@ import { loadStopInfo, loadStopArrivals, updateFavoriteStops } from '../actions/
 import _includes from 'lodash/includes'
 
 const mapStateToProps = (state, ownProps) => {
-  const stopId = ownProps.match.params.id
+  const stopId = parseInt(ownProps.match.params.id,10)
   return {
     stopId: stopId,
     stopInfo: state.stopInfo[stopId] || {},
