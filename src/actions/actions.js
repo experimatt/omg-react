@@ -132,3 +132,13 @@ export function updateFavoriteStops(stopId) {
     })
   }
 }
+
+export function toggleMapStopPreview(stopId) {
+  return function(dispatch) {
+    dispatch({ type: types.MAP_STOP_PREVIEW.START })
+    dispatch({
+        type: types.MAP_STOP_PREVIEW.SUCCESS,
+        payload: stopId
+    })
+  }
+}

@@ -1,19 +1,20 @@
 import { connect } from 'react-redux'
 import MapComponent from '../components/map'
-import { loadNearbyStops, updateMapCenter } from '../actions/actions'
-import _isEmpty from 'lodash/isEmpty'
+import { loadNearbyStops, updateMapCenter, toggleMapStopPreview } from '../actions/actions'
 
 const mapStateToProps = (state) => {
   return {
     userLocation: state.userLocation,
     nearbyStops: state.nearbyStops,
-    mapCenter: _isEmpty(state.userLocation.coords) ? state.mapCenter : state.userLocation.coords
+    mapCenter: state.mapCenter,
+    mapStopPreview: state.mapStopPreview
   }
 }
 
 const mapDispatchToProps = {
   loadNearbyStops,
-  updateMapCenter
+  updateMapCenter,
+  toggleMapStopPreview
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MapComponent);

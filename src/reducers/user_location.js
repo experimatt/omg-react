@@ -1,6 +1,6 @@
 import { USER_LOCATION } from '../actions/action_types'
 
-const initialState = { coords: {} }
+const initialState = { coords: {latitude: 44.975918, longitude: -93.273079} }
 
 export const userLocation = (state = initialState, action) => {
 

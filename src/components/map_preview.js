@@ -34,7 +34,7 @@ export const MapPreview = (props) => {
           lat={props.stop_lat}
           lng={props.stop_lon}
           stop_id={props.stop_id}
-          disabled={true}
+          clickable={false}
         />
       </GoogleMapReact>
     </Link>
